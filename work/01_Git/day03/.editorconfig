@@ -1,0 +1,19 @@
+# 找到当前配置文件就停止往上再找！！
+root = true
+
+# end_of_line  ： 以linux的换行风格进行换行
+# trim_trailing_whitespace ：去除换行前面的所有空白字符
+# insert_final_newline ：在文件的最后都会插入一个新行
+[*]
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# indent_style ： 缩进的风格 空格 tab
+# indent_size : 如果风格是空格 size制定到底要多少个空格
+[*.css]
+indent_style = space
+indent_size = 2
+[*.js]
+indent_style = space
+indent_size = 5
