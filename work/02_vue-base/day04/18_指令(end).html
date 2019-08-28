@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-cloak] { display: none }
+    </style>
+</head>
+<body>
+    <div id="app">
+       <div>
+           {{msg}}
+           {{msg}}
+           {{msg}}
+           {{msg}}
+           {{msg}}
+           {{msg}}
+           {{msg}}
+           {{msg}}
+           {{msg}}
+           {{msg}}
+           {{msg}}
+       </div>
+    </div>
+</body>
+<script src="js/vue.min.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"123"
+        }
+    })
+</script>
+</html>
