@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+</head>
+<body>
+<div id="box">
+  <ul>
+    <li v-for="(val, index) in arr">
+      <span  v-if="flag">{{val.name}}:{{val.age}}:{{val.wife}}</span>
+      <button @click="handleClick(index)" >{{++num}}</button>
+      <button v-on:click="handleChange(index)">change</button>
+    </li>
+  </ul>
+</div>
+
+
+<script src="js/vue.js"></script>
+<script>
+  var vm = new Vue({
+    el: '#box',
+    data: {
+      flag: true,
+      num: 0,
+      arr:[
+        {name: '达目1', age: 18, wife: '18碎老婆' },
+        {name: '达目2', age: 18, wife: '18碎老婆' },
+        {name: '达目3', age: 18, wife: '18碎老婆' },
+        {name: '达目4', age: 18, wife: '18碎老婆' }
+      ],
+      arr2: [
+        {name: 'damu1', age: 18, wife: 'zdy' },
+        {name: 'damu2', age: 18, wife: 'zdy' },
+        {name: 'damu3', age: 18, wife: 'zdy' },
+        {name: 'damu4', age: 18, wife: 'zdy' }
+      ]
+
+    },
+    methods: {
+      handleClick: function (index) {
+        // this.arr.splice(index, 1);
+        // this.flag = !this.flag;
+
+      },
+      handleChange: function (index) {
+        this.arr.splice(index,1,this.arr2[index])
+      }
+    }
+  })
+</script>
+</body>
+</html>
