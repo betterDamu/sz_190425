@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+      <ul>
+          <li v-for="(item,index) in arr">
+              {{item}} --> {{index}}
+          </li>
+      </ul>
+
+        <ul>
+            <li v-for="(val,key,index) in obj">
+                {{val}} --> {{key}} --> {{index}}
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="js/vue.min.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            arr:["damu","jj","hh","a","b"],
+            obj:{
+                name:"damu",
+                age:18,
+                wife:"zdy",
+                son:"lph"
+            }
+        }
+    })
+</script>
+</html>

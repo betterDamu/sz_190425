@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+       <div v-if="!flag">城市套路深 我要回农村</div>
+       <div v-else-if="flag">flag</div>
+       <div v-else>农村路更滑 人心更复杂</div>
+       <button @click="switchFn">switch</button>
+    </div>
+</body>
+<script src="js/vue.min.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            flag:true
+        },
+        methods:{
+            switchFn(){
+                this.flag = !this.flag
+            }
+        }
+    })
+</script>
+</html>

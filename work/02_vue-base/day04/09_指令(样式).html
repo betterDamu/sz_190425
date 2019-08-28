@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       /* div{
+             width: 200px;
+             height: 200px;
+             background: yellow;
+         }
+        .pink{
+            background: pink;
+        }*/
+    </style>
+</head>
+<body>
+    <!--样式表：
+        规则
+            选择器 + 声明块
+                        css声明-->
+
+    <div id="app">
+        <div :style="divStyle"></div>
+        <button @click="handleSwitch">switch</button>
+    </div>
+</body>
+<script src="js/vue.min.js"></script>
+<script>
+    //使用vue来操作class  使用v-bind指令
+    //:class = "data中存在的属性key"
+    /*对应的属性值：
+            字符串（哪一个class名）
+            对象（class名：布尔值）
+            数组
+                [字符串]
+                [对象]
+     */
+
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            box:{
+                pink:true
+            },
+            divStyle:[{width:"100px"},{height:"100px"},{background:"deeppink"}]
+        },
+        methods:{
+            handleSwitch(){
+                this.box.pink = !this.box.pink;
+            }
+        }
+    })
+</script>
+</html>
