@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        {{msg}} ; {{msg2}}
+    </div>
+</body>
+<!--
+    vue.min.js 就会往全局暴露一个Vue的构造函数
+        在js中函数是一等公民 我们不区分函数的类型 我们只关注函数的调用形式
+        高阶函数: 函数可以作为参数传给另外一个函数  函数可以作为另外一个函数的返回值
+        函数化编程  异步编程
+-->
+<script src="./js/vue.min.js"></script>
+<script>
+    //vue的声明式编程
+    //vue的响应式数据（单向数据流）
+
+    /*
+        1. 所有想要交给vue管理的数据 一定要写在data的配置中
+        2. data中的属性 会 转绑给对应的vm实例对象
+        3. data中的属性都是响应式的属性 属性的值发生改变是可以更新界面的
+    */
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"hello vue"
+        }
+    })
+
+    console.log(vm.msg);
+    setTimeout(()=>{
+        vm.msg = "byebye vue"
+    },2000)
+
+    vm.msg2 ="xxx";
+    setTimeout(()=>{
+        vm.msg2 = "xxx lalala";
+    },4000)
+
+</script>
+</html>

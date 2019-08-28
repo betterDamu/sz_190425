@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="handleC">来点我啊</button>
+        <button @click="handleC">来点我啊</button>
+        <button @mouseUp="handleC">来点我啊</button>
+    </div>
+</body>
+<script src="js/vue.min.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        methods:{
+            handleC(){
+                console.log("---")
+            }
+        }
+    })
+</script>
+</html>

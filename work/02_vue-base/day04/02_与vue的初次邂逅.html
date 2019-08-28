@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <input  type="text" placeholder="来点我啊" v-model="msg">
+        {{msg}}
+    </div>
+</body>
+<script src="./js/vue.min.js"></script>
+<script>
+    //vue的声明式编程
+    //vue的响应式数据（单向数据流）
+    //vue的双向数据流
+    //vue是数据驱动的框架
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"hello vue"
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app" v-html="htmlCode">
+
+    </div>
+</body>
+<script src="js/vue.min.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"hello 指令",
+            num:10,
+            flag:true,
+            htmlCode:"<strong>123</strong>"
+        }
+    })
+</script>
+</html>

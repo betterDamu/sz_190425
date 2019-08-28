@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <!--{{flag?"这是正确的":"这是错误的"}}-->
+        {{new Date()}}
+        <!--{{a}}-->
+    </div>
+</body>
+<script src="js/vue.min.js"></script>
+<script>
+    // var a = 123;  不要在插值表达式中访问全局变量
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"hello 指令",
+            num:10,
+            flag:true
+        }
+    })
+</script>
+</html>

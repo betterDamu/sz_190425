@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #todolist{
+            width: 240px;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            text-align: center;
+        }
+        ul{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="todolist">
+        <input type="text" placeholder="你想干啥" v-model="todoitem">
+        <button v-on:click="handleC">add</button>
+        <ul>
+            <li v-for="item in todos">
+                {{item}}
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="./js/vue.min.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#todolist",
+        data:{
+            todoitem:"",
+            todos:["吃饭","睡觉","玩沛华"]
+        },
+        methods:{
+            handleC(){
+                this.todos.push(this.todoitem)
+            }
+        }
+    })
+</script>
+</html>
