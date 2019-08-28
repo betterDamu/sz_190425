@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span{
+            display: inline-block;
+            width: 120px;
+            text-align: center
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+       <ul>
+           <li v-for="(item,index) in arr">
+               <span>姓名:{{item.name}}</span>
+               <span>年龄:{{item.age}}</span>
+               <span>老婆:{{item.wife}}</span>
+               <button @click="del(index)">del</button>
+               <button @click="update(index)">update</button>
+           </li>
+       </ul>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            arr:[{
+                name:"达姆",
+                age:18,
+                wife:"周冬雨"
+            },{
+                name:"李沛华",
+                age:48,
+                wife:"熊键"
+            },{
+                name:"马云",
+                age:39,
+                wife:"王宝强"
+            },{
+                name:"李晨",
+                age:30,
+                wife:"范冰冰"
+            },{
+                name:"晓飞张",
+                age:19,
+                wife:"xxx"
+            }],
+        },
+        methods:{
+            del(index){
+                this.arr.splice(index,1)
+            },
+            update(index){
+                //数据以已经被修改  只是界面没有被更新
+                this.arr[index] = {
+                    name:"xxx",
+                    age:0,
+                    wife:"yyy"
+                }
+                /*this.arr.splice(index,1,{
+                    name:"xxx",
+                    age:0,
+                    wife:"yyy"
+                })*/
+            }
+        }
+    })
+</script>
+</html>

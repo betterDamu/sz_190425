@@ -7,13 +7,13 @@
 <body>
     <div id="app">
       <ul>
-          <li v-for="(item,index) in arr">
+          <li v-for="(item,index) in arr" key="val">
               {{item}} --> {{index}}
           </li>
       </ul>
 
         <ul>
-            <li v-for="(val,key,index) in obj">
+            <li v-for="(val,key,index) in obj" key="val">
                 {{val}} --> {{key}} --> {{index}}
             </li>
         </ul>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span{
+            display: inline-block;
+            width: 120px;
+            text-align: center
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+       <ul>
+           <li v-for="(val,key) in obj">
+               <span>{{key}} : {{val}}</span>
+           </li>
+       </ul>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            obj:{
+                name:"damu",
+                age:18,
+                wife:"zdy",
+                wife2:null
+            }
+        }
+    })
+
+
+
+</script>
+</html>
