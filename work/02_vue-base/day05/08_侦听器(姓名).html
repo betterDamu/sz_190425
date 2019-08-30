@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" placeholder="请输入姓" v-model="firstname">
+        <input type="text" placeholder="请输入名" v-model="lastname">
+        <input type="text" v-model="fullname">
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    var vm = new  Vue({
+        el:"#app",
+        data:{
+            firstname:"T",
+            lastname:"Mac",
+            fullname:"T-Mac"
+        },
+        watch:{
+            firstname(val,oldnew){
+                console.log(oldnew)
+                this.fullname = val + "-" + this.lastname
+            },
+            lastname(val){
+                this.fullname = this.firstname + "-" +  val
+            }
+        }
+    })
+
+   /* vm.$watch("firstname",function (newval,oldnew) {
+        console.log(oldnew)
+        this.fullname = newval + "-" + this.lastname
+    })
+    vm.$watch("lastname",function (newval,oldnew) {
+        console.log(oldnew)
+        this.fullname = this.firstname + "-" +  newval
+    })*/
+</script>
+</html>

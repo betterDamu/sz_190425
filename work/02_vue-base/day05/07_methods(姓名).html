@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" placeholder="请输入姓" v-model="firstname">
+        <input type="text" placeholder="请输入名" v-model="lastname">
+        <input type="text" v-model="fullname()">
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    // 1. 方法不要放在data中 作为事件的回调
+    // 2. 模板中的数据应该来自于data或者computed  不应该来自于方法的返回值!!
+
+    var vm = new  Vue({
+        el:"#app",
+        data:{
+            firstname:"T",
+            lastname:"Mac",
+            test:"test"
+        },
+        methods:{
+            fullname(){
+                return `${this.firstname }-${this.lastname }`
+            }
+        }
+    })
+</script>
+</html>

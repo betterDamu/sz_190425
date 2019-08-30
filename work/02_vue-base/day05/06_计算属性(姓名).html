@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" placeholder="请输入姓" v-model="firstname">
+        <input type="text" placeholder="请输入名" v-model="lastname">
+        <input type="text" v-model="fullname">
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    var vm = new  Vue({
+        el:"#app",
+        data:{
+            firstname:"T",
+            lastname:"Mac"
+        },
+        computed:{
+           /* 计算属性可以是一个函数
+                这个函数代表计算属性的get函数
+            计算属性也可以是一个对象
+                {
+                    get:fn,
+                    set:fn
+                }
+                vue初始化的时候 会调用一次get方法
+                技术属性关联的属性产生改变调用对应的get方法
+
+                当计算属性本身这个值发生改变时调用对应的set方法  将改变完的新值传给set的第一个参数*/
+
+            fullname:{
+                get() {
+                    console.log("get")
+                    return `${this.firstname}-${this.lastname}`
+                },
+                //直接修改fullname值得时候被调用
+                set(val){
+                   var arr = val.split("-");
+                   this.firstname = arr[0];
+                   this.lastname = arr[1];
+                }
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" placeholder="请输入姓" v-model="firstname">
+        <input type="text" placeholder="请输入名" v-model="lastname">
+        <input type="text" v-model="fullname">
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    var vm = new  Vue({
+        el:"#app",
+        data:{
+            firstname:"T",
+            lastname:"Mac"
+        },
+        computed:{
+            // 当vue中的一个数据 要通过其他数据计算得来 那就应该使用计算属性
+            fullname() {
+                return `${this.firstname}-${this.lastname}`
+            }
+        }
+    })
+</script>
+</html>

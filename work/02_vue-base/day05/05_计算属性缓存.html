@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{reversedMessage}}
+    {{reversedMessage}}
+    {{reversedMessage}}
+    {{reversedMessage}}
+    {{reversedMessage}}
+    {{reversedMessage}}
+    {{reversedMessage}}
+    {{reversedMessage}}
+    {{reversedMessage}}
+    {{reversedMessage}}
+    {{reversedMessage}}
+    {{reversedMessage}}
+    {{reversedMessage}}
+    {{reversedMessage}}
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    var vm = new  Vue({
+        // 在vue的配置对象中 基本上除了data中方方法 this指向window 其他都会指向vm实例对象
+        el:"#app",
+        data:{
+            message:"123456789",
+            test:"test"
+        },
+        //computed中的方法 在vue初始化的时候会调用一次
+        //computed中的方法 在其关联的data数据产生改变时方法也会被重新调用
+        computed:{
+            reversedMessage() {
+                console.log("----")
+                return this.message.split("").reverse().join("")
+            }
+        }
+    })
+</script>
+</html>
