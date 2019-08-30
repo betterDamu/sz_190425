@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span{
+            display: inline-block;
+            width: 160px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <input type="text" placeholder="请输入关键字" v-model="searchName">
+    <button @click="handleC">add</button>
+    <ul>
+        <li v-for="(item,index) in filterList">
+            <span>姓名:{{item.name}}</span>
+            <span>年龄:{{item.age}}</span>
+            <span>老婆:{{item.wife}}</span>
+        </li>
+    </ul>
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    var vm = new  Vue({
+        el:"#app",
+        data:{
+           searchName:"",
+           list:[
+               {name:"damu1",age:19,wife:"冬雨1"},
+               {name:"damu",age:18,wife:"冬雨"},
+               {name:"damu3",age:21,wife:"冬雨3"},
+               {name:"xfz2",age:23,wife:"冬雨5"},
+               {name:"damu2",age:20,wife:"冬雨2"},
+               {name:"damu4",age:22,wife:"冬雨4"},
+           ]
+        },
+        computed:{
+            filterList(){
+                return this.list.filter((item,index,arr)=>{
+                    return item.name.includes(this.searchName);
+                })
+            }
+        },
+        methods:{
+            handleC(){
+                this.list.push({
+                    name:this.searchName,
+                    age:1,
+                    wife:"hh"
+                })
+            }
+        }
+    })
+</script>
+</html>
+
+
+
+

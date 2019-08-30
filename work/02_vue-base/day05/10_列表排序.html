@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span{
+            display: inline-block;
+            width: 160px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <input type="text" placeholder="请输入关键字" v-model="searchName">
+    <button @click="handleC">add</button>
+    <ul>
+        <li v-for="(item,index) in filterList">
+            <span>姓名:{{item.name}}</span>
+            <span>年龄:{{item.age}}</span>
+            <span>老婆:{{item.wife}}</span>
+        </li>
+    </ul>
+    <button @click="handleUp">按年龄升序</button>
+    <button @click="handleDown">按年龄降序</button>
+    <button @click="handleDef">按年龄的原本顺序</button>
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    var vm = new  Vue({
+        el:"#app",
+        data:{
+           searchName:"",
+           sortType:"",
+           list:[
+               {name:"damu1",age:19,wife:"冬雨1"},
+               {name:"damu",age:18,wife:"冬雨"},
+               {name:"damu3",age:21,wife:"冬雨3"},
+               {name:"xfz2",age:23,wife:"冬雨5"},
+               {name:"damu2",age:20,wife:"冬雨2"},
+               {name:"damu4",age:22,wife:"冬雨4"},
+           ]
+        },
+        computed:{
+            filterList(){
+                // 做过滤
+                var  filterlist = this.list.filter((item,index,arr)=>{
+                     return  item.name.includes(this.searchName);
+                })
+                //做排序
+                switch (this.sortType){
+                    case 1:
+                        filterlist.sort((a,b)=>{
+                            return a.age - b.age;
+                        })
+                        break;
+                    case -1:
+                        filterlist.sort((a,b)=>{
+                            return b.age - a.age;
+                        })
+                        break;
+                }
+                return filterlist;
+            }
+        },
+        methods:{
+            handleC(){
+                this.list.push({
+                    name:this.searchName,
+                    age:1,
+                    wife:"hh"
+                })
+            },
+            handleUp(){
+                this.sortType=1;
+            },
+            handleDown(){
+                this.sortType=-1;
+            },
+            handleDef(){
+                this.sortType=0;
+            }
+        }
+    })
+</script>
+</html>
+
+
+
+
