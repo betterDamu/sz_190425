@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <!--{{++msg}}   &lt;!&ndash;msg = msg + 1&ndash;&gt;-->
+        {{msg + 1}}
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    var vm = new  Vue({
+        el:"#app",
+        data:{
+            msg:10
+        }
+    })
+</script>
+</html>
