@@ -7,19 +7,19 @@
 <body>
     <div id="app">
       <ul>
-          <li v-for="(item,index) in arr" key="item">
+          <li v-for="(item,index) in arr" :key="item">
               {{item}} --> {{index}}
           </li>
       </ul>
 
         <ul>
-            <li v-for="(val,key,index) in obj" key="val">
+            <li v-for="(val,key,index) in obj" :key="val">
                 {{val}} --> {{key}} --> {{index}}
             </li>
         </ul>
     </div>
 </body>
-<script src="js/vue.min.js"></script>
+<script src="js/vue.js"></script>
 <script>
     var vm = new Vue({
         el:"#app",
