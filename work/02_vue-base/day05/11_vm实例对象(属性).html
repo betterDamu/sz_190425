@@ -6,7 +6,7 @@
 </head>
 <body>
     <div id="app">
-
+        123
     </div>
 </body>
 <script src="js/vue.js"></script>
@@ -21,8 +21,14 @@
     var vm = new  Vue({
         name:"root",
         el:"#app",
+        template:`<span>{{test}}</span>`,
         data:{
             test:"test"
+        },
+        methods:{
+            c(){
+                console.log("c")
+            }
         }
     })
 
@@ -31,6 +37,8 @@
     console.log(vm.$el)
     console.log(vm.$options.name)
     console.log(vm.$data.test,vm.test)
+
+    vm.c();
 </script>
 </html>
 

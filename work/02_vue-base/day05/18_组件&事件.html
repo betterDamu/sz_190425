@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <!--在组件标签上绑定的事件都vue的自定义事件-->
+        <v-damu @click="handleC"></v-damu>
+    </div>
+</body>
+<script src="./js/vue.js"></script>
+<script>
+    Vue.component("v-damu",{
+        template:`<p @click="handleC">我是p标签</p>`,
+        methods:{
+            handleC(){
+                this.$emit("click")
+            }
+        }
+    })
+
+    var vm = new Vue({
+        el:"#app",
+        methods:{
+            handleC(){
+                console.log("我是app")
+            }
+        }
+    })
+</script>
+</html>
