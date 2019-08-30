@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+   "use strict"
+   Vue.config.productionTip=false;
+   /*
+        1. vm 配置
+        2. vm 属性
+        3. vm 方法
+    */
+    var vm = new  Vue({
+        name:"root",
+        el:"#app",
+        data:{
+            test:"test"
+        }
+    })
+
+   // 把$root作为只读属性去使用
+    console.log(vm.$root === vm)
+    console.log(vm.$el)
+    console.log(vm.$options.name)
+    console.log(vm.$data.test,vm.test)
+</script>
+</html>
+
+
+
+

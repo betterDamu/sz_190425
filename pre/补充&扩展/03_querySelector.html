@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #wrap{
+            width: 100px;
+            height: 600px;
+            border: 1px solid;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        .item{
+            width: 100px;
+            height: 50px;
+            border: 1px solid;
+            background: gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <button id="btn">变粉</button>
+</body>
+<script>
+    window.onload=function () {
+        var btn = document.querySelector("#btn")
+        var wrapNode = document.querySelector("#wrap")
+        /*
+            querySelectorAll:静态列表         NodeList  拥有forEach方法的
+            getElementsByClassName:动态列表   HTMLCollection   没有forEach方法
+        */
+
+        // debugger
+        //静态列表  第47行代码被执行时 dom树中5个节点
+        var itemNodes = document.querySelectorAll(".item");
+
+
+        // dom结构产生变化!!  getElementsByClassName能动态的进行调整
+        // var itemNodes = document.getElementsByClassName("item");
+        //var itemNodes2 = Array.from(itemNodes)
+        wrapNode.innerHTML += `<div class="item"></div>`;
+
+        btn.onclick = function(){
+            /*itemNodes2.forEach((item)=>{
+                item.style.background="pink"
+            })*/
+            for(var i=0;i<itemNodes.length;i++){
+                itemNodes[i].style.background="pink"
+            }
+        }
+
+    }
+
+</script>
+</html>

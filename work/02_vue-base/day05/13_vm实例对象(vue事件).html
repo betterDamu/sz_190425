@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <span v-text="test"></span>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+   "use strict"
+   Vue.config.productionTip=false;
+   /*
+        1. vm 配置
+            el: 为vue组件定义模板    为vue组件指定挂载对象
+        2. vm 属性
+        3. vm 方法
+    */
+    var vm = new  Vue({
+        el:"#app",
+        data:{
+            test:"test"
+        }
+    })
+
+   function damu1(){
+       console.log("damu1")
+   }
+   function damu2(){
+       console.log("damu2")
+   }
+   vm.$on("damu",damu1)
+   vm.$on("damu",damu2)
+    vm.$on("xfz",(a,b,c)=>{
+       console.log("xfz")
+    })
+
+    /*vm.$once("damu",(a,b,c)=>{
+       console.log(a,b,c)
+    })*/
+    setInterval(()=>{
+        vm.$emit("damu")
+        vm.$emit("xfz")
+    },1000)
+
+    setTimeout(()=>{
+        vm.$off("xfz")
+        vm.$off("damu",damu2)
+    },4000)
+</script>
+</html>
+
+
+
+
