@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <v-button></v-button>
+    </div>
+
+    <div id="app2">
+        <v-button></v-button>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    Vue.config.productionTip=false;
+
+
+
+    var vButton = {
+        template:`<button @click="handleC">{{val}}</button>`,
+        data(){
+            return {
+                val:"点我啊"
+            }
+        },
+        methods:{
+            handleC(){
+                console.log(this.val+"666")
+            }
+        }
+    }
+    //根组件
+    var vm = new  Vue({
+        el:"#app",
+        data:{
+            msg:"msg"
+        },
+        // 局部组件
+        components:{
+            "v-button":vButton
+        }
+    })
+
+</script>
+</html>
+
+
+
+
