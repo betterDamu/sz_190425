@@ -13,34 +13,44 @@
         span{
             opacity:1;
             color: black;
-            font-size: 50px;
+            font-size: 16px;
         }
 
         /*从存在到消失*/
-        .v-leave{}
         .v-leave-active{
-            transition: 2s all;
+            animation: 2s move1;
         }
-        .v-leave-to{
-            opacity:0;
-            color: green;
-            font-size: 50px;
+        @keyframes move1 {
+            from{
+                opacity:1;
+                color: black;
+                font-size: 16px;
+            }
+            to{
+                opacity:0;
+                color: green;
+                font-size: 50px;
+            }
         }
 
+
         /*从消失回到存在*/
-        .v-enter{
-            opacity:0;
-            color: green;
-            font-size: 50px;
-        }
         .v-enter-active{
-            transition: 2s all;
+            animation: 2s move2;
         }
-        .v-enter-to{
-            opacity:1;
-            color: black;
-            font-size: 50px;
+        @keyframes move2 {
+            from{
+                opacity:0;
+                color: green;
+                font-size: 50px;
+            }
+            to{
+                opacity:1;
+                color: black;
+                font-size: 16px;
+            }
         }
+
     </style>
 </head>
 <body>
