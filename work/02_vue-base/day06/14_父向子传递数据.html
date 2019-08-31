@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0}
+        .counter{
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            border-radius:50%;
+            background: pink;
+
+            text-align: center;
+            line-height: 100px;
+            font-size: 30px;
+            font-family: "Sitka Heading";
+        }
+    </style>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <counter :count="num"></counter>
+        <counter :count="num"></counter>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip=false;
+    var app = new Vue({
+        el:"#app",
+        data:{num:0},
+        components:{
+            counter:{
+                props:["count"],
+                data(){
+                  return {
+                      num:this.count
+                  }
+                },
+                template:`<i class="counter" @click="handleC">{{num}}</i>`,
+                methods:{
+                    handleC(){
+                        this.num++
+                    }
+                }
+            }
+        }
+    })
+
+</script>
+</html>
