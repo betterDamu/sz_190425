@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0}
+        p{
+            margin-left: 100px;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/pubsub-js/1.7.0/pubsub.min.js"></script>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+       <v-p text="damu"></v-p>
+       <v-p text="lph"></v-p>
+       <v-p text="xjj"></v-p>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip=false;
+    //总线
+    Vue.prototype.bus=new Vue();
+    var app = new Vue({
+        el:"#app",
+        components:{
+            "v-p":{
+                props:["text"],
+                data(){
+                    return {
+                        msg : this.text
+                    }
+                },
+                template:"<p @click='handleC'>{{msg}}</p>",
+                methods:{
+                    handleC(){
+                        //发布
+                       // this.bus.$emit("change",this.msg)
+                        PubSub.publish('change', this.msg);
+                    }
+                },
+                mounted(){
+
+                    //订阅
+                    /* var me = this;
+                    this.bus.$on("change",(msg)=>{
+                        me.msg = msg;
+                    })*/
+
+                    // var me = this;
+                   /* PubSub.subscribe("change",function(msg,data){
+                        this.msg = data
+                    }.bind(this))*/
+
+                     PubSub.subscribe("change",(msg,data)=>{
+                         this.msg = data
+                     })
+                }
+            }
+        }
+    })
+
+
+</script>
+</html>
