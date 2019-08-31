@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <div v-move="500" style="width: 100px;height: 100px;background: pink"></div>
+</div>
+</body>
+<script>
+    /*
+        Vue.set()
+        Vue.component()
+        Vue.filter()
+        Vue.directive()
+    */
+
+    Vue.config.productionTip=false;
+
+    var vm = new Vue({
+        el:"#app",
+        data: {
+            date:new Date()
+        },
+        directives:{
+           move:{
+               bind(el,binding){
+                   console.log(binding)
+                   el.style.transition="3s transform";
+                   setTimeout(()=>{
+                       el.style.transform = `translateX(${binding.value}px)`
+                   })
+               }
+           }
+        }
+    })
+</script>
+</html>

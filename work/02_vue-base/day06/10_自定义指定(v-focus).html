@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-focus>
+</div>
+</body>
+<script>
+    /*
+        Vue.set()
+        Vue.component()
+        Vue.filter()
+    */
+
+    Vue.config.productionTip=false;
+    Vue.directive('focus', {
+        inserted: function (el) {
+            el.focus()
+        }
+    })
+
+    var vm = new Vue({
+        el:"#app",
+        data: {
+            date:new Date()
+        }
+    })
+</script>
+</html>

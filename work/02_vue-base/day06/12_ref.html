@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <span ref="xfz">123</span>
+        <damu ref="damu"></damu>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip=false;
+    var app = new Vue({
+        el:"#app",
+        data: {
+            date:new Date()
+        },
+        components:{
+            damu:{
+                template:`<div>达姆</div>`,
+                data(){
+                    return {
+                        msg:"msg"
+                    }
+                }
+            }
+        }
+    })
+
+    console.log(app.$refs.xfz)
+    console.log(app.$refs.damu.msg)
+</script>
+</html>
