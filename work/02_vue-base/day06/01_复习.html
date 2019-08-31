@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <!--注册事件回调的时候  这个回调不要在data中定义
+        在模板内部理应放data中的数据 不要放methods中的方法-->
+
+        <!--<input type="text" v-model="handleC()">-->
+        {{handleC()}}
+        <p @click="handleC(`msg`)">事件</p>
+    </div>
+</body>
+<script src="./js/vue.js"></script>
+<script>
+
+    Vue.config.productionTip=false;
+    var vm = new Vue({
+        el:"#app",
+        methods:{
+            handleC(val){
+                console.log("我是app",val)
+                return 123;
+            }
+        }
+    })
+</script>
+</html>

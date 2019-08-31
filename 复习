@@ -4,3 +4,12 @@
 3. getElementsByClassName
     本身这个api是可以动态感知dom树的变化的
     一般使用的时候 不要将它转成真数组
+4. 工程化
+    版本控制 + 打包工具
+     git         webpack   (html css js)
+                 browserify
+                 gulp
+                 grunt
+                 fis3
+                 rollup
+                 parcel

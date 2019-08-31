@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .btn{
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <v-button class="btn" msg="xxx" v-show="true"></v-button>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    /*
+        props特性属性(出现在组件的props列表中)                            组件不会继承
+        vue指令                                                           组件不会继承
+        非props特性属性(没有出现在组件的props列表中 不是一个vue指令)      组件继承
+    */
+
+
+    Vue.config.productionTip=false;
+
+    var vButton = {
+        props:["msg"],
+        template:`
+            <div>
+                <button @click="handleC">{{val}}</button>
+                <button @click="handleC">{{msg}}</button>
+            </div>
+        `,
+        data(){
+            return {
+                val:"点我啊"
+            }
+        },
+        methods:{
+            handleC(){
+                console.log(this.val+"666")
+            }
+        }
+    }
+    //根组件
+    var vm = new  Vue({
+        el:"#app",
+        data:{
+            msg:"msg"
+        },
+        // 局部组件
+        components:{
+            "v-button":vButton
+        }
+    })
+
+</script>
+</html>
+
+
+
+

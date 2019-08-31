@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .btn{
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        12331312
+    </div>
+</body>
+<script src="js/vue.runtime.js"></script>
+<script>
+    Vue.config.productionTip=false;
+    var vButton = {
+        //template:`<button>btn</button>`,
+        render: function (createElement) {
+            return createElement('button' , "btn")
+        }
+    }
+    //根组件
+    var vm = new  Vue({
+        el:"#app",
+        components:{
+            "v-button":vButton
+        },
+        render: function (createElement) {
+            return createElement('v-button')
+        }
+    })
+
+    // vm.$mount("#app")
+
+</script>
+</html>
+
+
+
+
