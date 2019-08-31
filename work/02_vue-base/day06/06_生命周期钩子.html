@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <span v-show="flag">
+            {{msg}}
+        </span>
+    </div>
+</body>
+<script>
+    // 声明式编程
+    Vue.config.productionTip=false;
+    var vm = new Vue({
+        el:"#app",
+        data: {
+            flag:true,
+            msg:"我是一条咸鱼 我也能翻身"
+        },
+        mounted(){
+            this.timer = setInterval(()=>{
+                console.log(this.msg);
+                this.flag = !this.flag;
+            },1000)
+        },
+        destroyed(){
+            clearInterval(this.timer)
+        }
+    })
+</script>
+</html>

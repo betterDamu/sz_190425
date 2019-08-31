@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+    <style>
+        /*
+            1. .v-leave 没有用的
+            2. .v-enter-to要和动画节点的元素状态保持一致
+        */
+
+        span{
+            opacity:1;
+            color: black;
+            font-size: 50px;
+        }
+        .v-leave{}
+        .v-leave-active{
+            transition: 2s opacity;
+        }
+        .v-leave-to{
+            opacity:0;
+            color: green;
+            font-size: 50px;
+        }
+
+        .v-enter{
+            opacity:0;
+            color: green;
+            font-size: 50px;
+        }
+        .v-enter-active{
+            transition: 2s opacity;
+        }
+        .v-enter-to{
+            opacity:1;
+            color: black;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="flag = !flag">btn</button>
+        <br>
+        <transition>
+            <span v-show="flag">
+                {{msg}}
+            </span>
+        </transition>
+    </div>
+</body>
+<script>
+    // 声明式编程
+    Vue.config.productionTip=false;
+    var vm = new Vue({
+        el:"#app",
+        data: {
+            flag:false,
+            msg:"我是一条咸鱼 我也能翻身"
+        },
+        destroyed(){
+            clearInterval(this.timer)
+        }
+    })
+</script>
+</html>
