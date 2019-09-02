@@ -15,8 +15,6 @@
     import header from "./components/Header"
     import list from "./components/List"
     import footer from "./components/Footer"
-    import PubSub from 'pubsub-js'
-
     export default {
         name: "App",
         data(){
@@ -71,14 +69,13 @@
           "todo-footer":footer
         },
         mounted(){
-          PubSub.subscribe("del",(msg,id)=>{
+          this.delTodoBus.$on("del",(id)=>{
             this.todos = this.todos.filter((item)=>{
               return item.id !== id
             })
           })
 
-          PubSub.subscribe("updateChecked",(msg,{id,checked})=>{
-            console.log(msg,id,checked)
+          this.updateCheckedBus.$on("updateChecked",(id,checked)=>{
             this.todos.forEach((item)=>{
               if(item.id === id){
                 item.checked = checked

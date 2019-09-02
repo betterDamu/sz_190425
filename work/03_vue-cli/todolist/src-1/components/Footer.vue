@@ -25,12 +25,13 @@
         computed:{
           completedCount(){
              return this.todos.reduce((adder,item)=>{
+               console.log(adder)
                return   adder + (item.checked?1:0);
              },0)
           },
           checkeAll:{
             get(){
-              return ((this.todos.length !== 0) && (this.todos.length === this.completedCount))
+              return this.todos.length === this.completedCount
             },
             set(newval){
               this.$emit("checkAll",newval)

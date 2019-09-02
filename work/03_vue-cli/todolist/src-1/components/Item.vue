@@ -37,7 +37,6 @@
 </template>
 
 <script>
-    import PubSub from 'pubsub-js'
     export default {
         name: "Item",
         props:{
@@ -54,13 +53,13 @@
                return this.todo.checked
              },
              set(newval){
-               PubSub.publish("updateChecked",{id:this.todo.id,checked:newval})
+               this.updateCheckedBus.$emit("updateChecked",this.todo.id,newval)
              }
           }
         },
         methods:{
           handleC(){
-            PubSub.publish("del",this.todo.id)
+            this.delTodoBus.$emit("del",this.todo.id)
           }
         }
     }

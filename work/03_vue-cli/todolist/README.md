@@ -21,3 +21,18 @@
   5. 启动项目
         开发: npm start
         生产: npm run build
+
+# todolist的数据传递
+  App Header List Item Footer
+  1.  初始化界面(父向子传)
+      App --todos--> List --todo--> Item
+      App --todos--> Footer
+  2.  Header(子向父)
+      Header --新的todo--> App
+  3.  Item(非父子)
+      Item --id 勾选状态--> App
+  4.  Footer(子向父)
+      Footer --全选按钮的勾选状态--> App
+
+
+
