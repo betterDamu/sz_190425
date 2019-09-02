@@ -42,7 +42,7 @@
               {
                 id:5,
                 text:"去哪都睡觉",
-                checked:true
+                checked:false
               }
             ]
           }
@@ -56,6 +56,13 @@
           "todo-header":header,
           "todo-list":list,
           "todo-footer":footer
+        },
+        mounted(){
+          this.delTodoBus.$on("del",(id)=>{
+            this.todos = this.todos.filter((item)=>{
+              return item.id !== id
+            })
+          })
         }
     }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="todo-header">
     <input type="text" placeholder="请输入你的任务名称，按回车键确认"
-            v-model="msg" @keydown.enter="handleKeyDown"/>
+            v-model.trim="msg" @keydown.enter="handleKeyDown"/>
   </div>
 </template>
 
@@ -17,13 +17,16 @@
         methods:{
           handleKeyDown(){
             //构建一个todo对象 并且调用app中的add方法
-            var todo = {
-              id: id++,
-              text:this.msg,
-              checked:false
+            var text = this.msg;
+            if(text){
+              var todo = {
+                id: id++,
+                text,
+                checked:false
+              }
+              this.$emit("add",todo);
+              this.msg="";
             }
-            this.$emit("add",todo);
-            this.msg="";
           }
         }
     }
