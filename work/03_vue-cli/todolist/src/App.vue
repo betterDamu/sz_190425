@@ -20,34 +20,9 @@
     export default {
         name: "App",
         data(){
+          var todosStirng = localStorage.getItem("todos");
           return {
-            todos:[
-              {
-                id:1,
-                text:"吃饭睡觉",
-                checked:false
-              },
-              {
-                id:2,
-                text:"回家睡觉",
-                checked:false
-              },
-              {
-                id:3,
-                text:"上课睡觉",
-                checked:false
-              },
-              {
-                id:4,
-                text:"下课睡觉",
-                checked:false
-              },
-              {
-                id:5,
-                text:"去哪都睡觉",
-                checked:false
-              }
-            ]
+            todos:todosStirng?JSON.parse(todosStirng):[]
           }
         },
         methods:{
@@ -69,6 +44,14 @@
           "todo-header":header,
           "todo-list":list,
           "todo-footer":footer
+        },
+        watch:{
+          todos:{
+            handler(newVal){
+              localStorage.setItem("todos",JSON.stringify(newVal))
+            },
+            deep: true
+          }
         },
         mounted(){
           PubSub.subscribe("del",(msg,id)=>{

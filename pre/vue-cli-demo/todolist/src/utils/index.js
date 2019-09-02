@@ -6,7 +6,6 @@ export default {
     return JSON.parse(localStorage.getItem(todokey)?localStorage.getItem(todokey):"[]");
   },
   setTodos(val){
-    console.log(val)
     localStorage.setItem(todokey,JSON.stringify(val))
   },
 
