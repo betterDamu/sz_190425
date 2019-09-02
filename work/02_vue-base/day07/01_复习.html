@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+    <style>
+        /*
+            1. .v-leave 没有用的
+            2. .v-enter-to要和动画节点的元素状态保持一致
+        */
+
+        span{
+            opacity:1;
+            color: black;
+            font-size: 50px;
+        }
+
+        /*从存在到消失*/
+        .damu-leave{}
+        .damu-leave-active{
+            transition: 2s all;
+        }
+        .damu-leave-to{
+            opacity:0;
+            color: green;
+            font-size: 50px;
+        }
+
+        /*从消失回到存在*/
+        .damu-enter{
+            opacity:0;
+            color: green;
+            font-size: 50px;
+        }
+        .damu-enter-active{
+            transition: 2s all;
+        }
+        .damu-enter-to{
+            opacity:1;
+            color: black;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="flag = !flag">btn</button>
+        <br>
+        <transition name="damu">
+            <span v-show="flag">
+                {{msg}}
+            </span>
+        </transition>
+    </div>
+</body>
+<script>
+    // 声明式编程
+    Vue.config.productionTip=false;
+    var vm = new Vue({
+        el:"#app",
+        data: {
+            flag:true,
+            msg:"我是一条咸鱼 我也能翻身"
+        },
+        destroyed(){
+            clearInterval(this.timer)
+        }
+    })
+</script>
+</html>
