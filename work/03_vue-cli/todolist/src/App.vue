@@ -22,7 +22,7 @@
               {
                 id:1,
                 text:"吃饭睡觉",
-                checked:false
+                checked:true
               },
               {
                 id:2,
@@ -61,6 +61,15 @@
           this.delTodoBus.$on("del",(id)=>{
             this.todos = this.todos.filter((item)=>{
               return item.id !== id
+            })
+          })
+
+          this.updateCheckedBus.$on("updateChecked",(id,checked)=>{
+            console.log(id,checked)
+            this.todos.forEach((item)=>{
+              if(item.id === id){
+                item.checked = checked
+              }
             })
           })
         }

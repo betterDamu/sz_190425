@@ -1,7 +1,35 @@
 <template>
   <li @mouseenter="isShow=!isShow" @mouseleave="isShow=!isShow" :class="{highlight:isShow}">
     <label>
-      <input type="checkbox" v-model="todo.checked"/>
+      <!--
+          1. 不管怎么样 item组件都不能直接修改app组件中的数据
+              v-model 的值 不能是 todo.checked
+
+          2. item组件复制了一份 app中的数据
+            data(){
+              return {
+                checked:this.todo.checked
+              }
+            }
+            以后界面上的勾选 改变的都是 item自己的checked
+            通过总线 在item的checked改变的时候  触发change事件 去同步 app中的checked
+             methods:{
+              handleChecked(){
+               this.updateCheckedBus.$emit("updateChecked",this.todo.id,this.checked)
+              }
+            }
+
+          3.将  v-model中的数据设计成计算属性
+            checked:{
+               get(){
+                 return this.todo.checked  // 显示
+               },
+               set(newval){
+                 this.updateCheckedBus.$emit("updateChecked",this.todo.id,newval)
+               }
+            }
+      -->
+      <input type="checkbox" v-model="checked"/>
       <span>{{todo.text}}</span>
     </label>
     <button class="btn btn-danger" v-show="isShow" @click="handleC">删除</button>
@@ -17,6 +45,16 @@
         data(){
           return{
             isShow:false
+          }
+        },
+        computed:{
+          checked:{
+             get(){
+               return this.todo.checked
+             },
+             set(newval){
+               this.updateCheckedBus.$emit("updateChecked",this.todo.id,newval)
+             }
           }
         },
         methods:{
