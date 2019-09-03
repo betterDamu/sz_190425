@@ -1,10 +1,6 @@
 <template>
   <ul class="todo-main">
-    <todo-item v-for="(todo,index) in todos" :todo="todo"  :key="todo.id">
-      <template slot-scope="obj">
-        <slot :checked="obj.checked"></slot>    <!--<input type="checkbox" class="arc" >-->
-      </template>
-    </todo-item>
+    <todo-item v-for="(todo,index) in todos" :todo="todo"  :key="todo.id"></todo-item>
   </ul>
 </template>
 

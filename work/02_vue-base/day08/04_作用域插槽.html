@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <!--插槽就是html片段的传递-->
+   <!-- 普通插槽:
+        父组件给子组件传递html片段时 在子组件中的占位元素 我们称为插槽!!!
+            插槽本质上是vue的一个内置组件  如果发现父子组件没有给子组件传递html片段
+        那插槽会使用自己肚子中默认定义的html片段-->
+
+    <!-- 具名插槽:
+            父组件给子组件传递html片段时 可以将html片段分成几个大类 每个大类对应一个插槽
+            在定义插槽的时候 我们看他通过name属性给插槽取名
+            在父组件中通过插槽的名字给html片段进行分类!
+            一个插槽对应一组html片段
+        -->
+
+    <!--作用域插槽允许子组件通过插槽向父组件传递数据-->
+
+    <div id="app">
+        <v-damu>
+            <template slot-scope="obj">
+                <div>{{obj.msg}}</div>
+            </template>
+        </v-damu>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip=false;
+    var vm = new Vue({
+        el:"#app",
+        components:{
+            "v-damu":{
+                template:`
+                       <slot :msg="msg"></slot>
+                `,
+                data(){
+                    return {
+                        msg:"test"
+                    }
+                }
+            }
+        }
+    })
+</script>
+</html>

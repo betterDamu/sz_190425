@@ -3,18 +3,7 @@
     <div class="todo-container">
       <div class="todo-wrap">
         <todo-header @add="add"></todo-header>
-
-        <todo-list :todos="todos">
-          <template slot-scope="obj">
-            <input type="checkbox" class="big" v-model="obj.checked">
-          </template>
-        </todo-list>
-        <todo-list :todos="todos">
-          <template slot-scope="obj">
-            <input type="checkbox" class="small" v-model="obj.checked">
-          </template>
-        </todo-list>
-
+        <todo-list :todos="todos"></todo-list>
         <todo-footer :todos="todos" @checkAll="checkAll"
                      @clearCompletedItem="clearCompletedItem"></todo-footer>
       </div>
@@ -27,6 +16,7 @@
     import list from "./components/List"
     import footer from "./components/Footer"
     import PubSub from 'pubsub-js'
+
     export default {
         name: "App",
         data(){
@@ -83,14 +73,6 @@
 </script>
 
 <style scoped>
-  .big{
-    width: 20px;
-    height: 20px;
-  }
-  .small{
-    width: 10px;
-    height: 10px;
-  }
   .todo-container {
     width: 600px;
     margin: 0 auto;
