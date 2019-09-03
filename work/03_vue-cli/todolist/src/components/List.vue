@@ -1,8 +1,8 @@
 <template>
   <ul class="todo-main">
-    <todo-item v-for="(todo,index) in todos" :todo="todo"  :key="todo.id">
+    <todo-item v-for="(todo,index) in todos" :todo="todo" :index="index"  :key="todo.id">
       <template slot-scope="obj">
-        <slot :checked="obj.checked"></slot>    <!--<input type="checkbox" class="arc" >-->
+        <slot :index="obj.index" :id="obj.id"></slot>    <!--<input type="checkbox" class="arc" >-->
       </template>
     </todo-item>
   </ul>

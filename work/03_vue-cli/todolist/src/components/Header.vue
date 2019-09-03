@@ -6,19 +6,11 @@
 </template>
 
 <script>
-    var todosStirng =  localStorage.getItem("todos");
-    // var id = todosStirng?JSON.parse(todosStirng)[0].id:0;
-    if(!todosStirng){
-      var id =0;
-    }else {
-      if(!JSON.parse(todosStirng).length){
-        var id =0;
-      }else{
-        var id =JSON.parse(todosStirng)[0].id;
-      }
-    }
     export default {
         name: "Header",
+        props:{
+          id:Number
+        },
         data(){
           return {
             msg:""
@@ -30,7 +22,7 @@
             var text = this.msg;
             if(text){
               var todo = {
-                id: ++id,
+                id:this.id,
                 text,
                 checked:false
               }

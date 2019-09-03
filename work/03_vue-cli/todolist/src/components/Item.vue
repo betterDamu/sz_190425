@@ -1,7 +1,7 @@
 <template>
   <li @mouseenter="isShow=!isShow" @mouseleave="isShow=!isShow" :class="{highlight:isShow}">
     <label>
-      <slot :checked="checked">
+      <slot :index="index" :id="todo.id">
         <input type="checkbox" v-model="checked"/>
       </slot>
       <span>{{todo.text}}</span>
@@ -15,7 +15,8 @@
     export default {
         name: "Item",
         props:{
-          todo:Object
+          todo:Object,
+          index:Number
         },
         data(){
           return{

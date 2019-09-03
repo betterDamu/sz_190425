@@ -2,16 +2,25 @@
   <div id="root">
     <div class="todo-container">
       <div class="todo-wrap">
-        <todo-header @add="add"></todo-header>
+        <todo-header @add="add" :id="Number(id)"></todo-header>
 
+        <!--咱们id 必须 要和数组的下标一致!!!-->
+
+        <!--
+          id从0开始的!!  id一般都是一个唯一的hash  :  "absdaskj01981"
+          1. 实现插槽的时候 最好使用 index
+          2. id的生成最好在App组件中做, 每当todos数据产生改变的时候 去同步id的值
+              按顺序删  √
+              不按顺序删 ×
+        -->
         <todo-list :todos="todos">
           <template slot-scope="obj">
-            <input type="checkbox" class="big" v-model="obj.checked">
+            {{obj}} <input type="checkbox" class="big" v-model="todos[obj.index].checked">
           </template>
         </todo-list>
         <todo-list :todos="todos">
           <template slot-scope="obj">
-            <input type="checkbox" class="small" v-model="obj.checked">
+            {{obj}}<input type="checkbox" class="small" v-model="todos[obj.index].checked">
           </template>
         </todo-list>
 
@@ -32,7 +41,13 @@
         data(){
           var todosStirng = localStorage.getItem("todos");
           return {
-            todos:todosStirng?JSON.parse(todosStirng):[]
+            todos:todosStirng?JSON.parse(todosStirng):[],
+            id:localStorage.getItem("todoId")||0
+          }
+        },
+        computed:{
+          checked(id){
+             console.log(id)
           }
         },
         methods:{
@@ -59,6 +74,10 @@
           todos:{
             handler(newVal){
               localStorage.setItem("todos",JSON.stringify(newVal))
+
+              //同步id
+              this.id = this.todos.length;
+              localStorage.setItem("todoId",this.id)
             },
             deep: true
           }
@@ -79,6 +98,7 @@
             })
           })
         }
+
     }
 </script>
 
