@@ -1,10 +1,12 @@
 <template>
   <li @mouseenter="isShow=!isShow" @mouseleave="isShow=!isShow" :class="{highlight:isShow}">
     <label>
-      <slot :index="index" :id="todo.id">
+      <slot name="inputSlot" :index="index" :id="todo.id">
         <input type="checkbox" v-model="checked"/>
       </slot>
-      <span>{{todo.text}}</span>
+      <slot name="spanSlot" :text="todo.text">
+        <span>{{todo.text}}</span>
+      </slot>
     </label>
     <button class="btn btn-danger" v-show="isShow" @click="handleC">删除</button>
   </li>

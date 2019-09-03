@@ -67,6 +67,41 @@
             deep watch!!!
 
         -- 插槽
+            普通插槽
+            具名插槽
+                单向数据流  父组件 ---html模板---> 子组件
+            作用域插槽
+                双向数据流
+                        父组件 ---html模板---> 子组件
+                        子组件 ---数据--->父组件
+
+
+            todolist:
+                item组件往外提供一个默认模板
+                    <input type="checkbox" v-model="checked"/>
+                    <span>{{todo.text}}</span>
+                我们希望在App组件中可以去定制item组件 input 和 span的风格
+                    1. 在item组件定义两个具名插槽
+                             <slot name="inputSlot" :index="index" :id="todo.id">
+                             <slot name="spanSlot" :text="todo.text">
+                    2. 在list组件中为item组件的两个插槽去指定模板!
+                             <template  slot-scope="obj" slot="inputSlot">
+                                <slot name="inputSlot" :id="obj.id" :index="obj.index"></slot>
+                              </template>
+
+                              <template slot-scope="obj" slot="spanSlot">
+                                <slot name="spanSlot" :text="obj.text" ></slot>
+                              </template>
+                    3. 发现在list组件又具有了两个插槽
+                    4. 在App组件中为list组件去指定两个模板
+                         <template slot-scope="obj" slot="inputSlot">
+                            <input type="checkbox" class="big" v-model="todos[obj.index].checked">
+                          </template>
+                          <template slot-scope="obj" slot="spanSlot">
+                            <span style="color:green">{{obj.text}}</span>
+                          </template>
+
+
 
 
 

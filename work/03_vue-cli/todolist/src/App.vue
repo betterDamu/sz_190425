@@ -7,20 +7,27 @@
         <!--咱们id 必须 要和数组的下标一致!!!-->
 
         <!--
-          id从0开始的!!  id一般都是一个唯一的hash  :  "absdaskj01981"
-          1. 实现插槽的时候 最好使用 index
-          2. id的生成最好在App组件中做, 每当todos数据产生改变的时候 去同步id的值
-              按顺序删  √
-              不按顺序删 ×
+                id从0开始的!!  id一般都是一个唯一的hash  :  "absdaskj01981"
+            1. 实现插槽的时候 最好使用 index
+            2. id的生成最好在App组件中做, 每当todos数据产生改变的时候 去同步id的值
+                按顺序删  √
+                不按顺序删 √
         -->
         <todo-list :todos="todos">
-          <template slot-scope="obj">
-            {{obj}} <input type="checkbox" class="big" v-model="todos[obj.index].checked">
+          <template slot-scope="obj" slot="inputSlot">
+            <input type="checkbox" class="big" v-model="todos[obj.index].checked">
+          </template>
+          <template slot-scope="obj" slot="spanSlot">
+            <span style="color:green">{{obj.text}}</span>
           </template>
         </todo-list>
+
         <todo-list :todos="todos">
-          <template slot-scope="obj">
-            {{obj}}<input type="checkbox" class="small" v-model="todos[obj.index].checked">
+          <template slot-scope="obj" slot="inputSlot">
+            <input type="checkbox" class="small" v-model="todos[obj.index].checked">
+          </template>
+          <template slot-scope="obj" slot="spanSlot">
+            <span style="color: red">{{obj.text}}</span>
           </template>
         </todo-list>
 
@@ -77,6 +84,10 @@
 
               //同步id
               this.id = this.todos.length;
+              this.todos.forEach((todo,index,arr)=>{
+                todo.id = (arr.length - 1 - index);
+                // todo.id = index
+              })
               localStorage.setItem("todoId",this.id)
             },
             deep: true
