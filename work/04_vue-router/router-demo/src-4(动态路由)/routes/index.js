@@ -3,7 +3,6 @@ import About from '@/components/About'
 import User from '@/components/User'
 import News from '@/components/Home/news'
 import Message from '@/components/Home/message'
-import MessageDetail from '@/components/Home/message/messageDetail'
 
 const routes=[
   {
@@ -11,17 +10,7 @@ const routes=[
     component:Home,
     children: [
       {path: 'news', component: News},
-      {
-        path: 'message',
-        component: Message,
-        children:[
-          {
-            path: "messageDetail/:id",
-            component: MessageDetail,
-            props: route => ({id: +route.params.id})
-          }
-        ]
-      },
+      {path: 'message', component: Message},
       {path: '', component: News}
     ]
   },
@@ -39,6 +28,7 @@ const routes=[
       {path:":id",component: User,props:route=>({id:+route.params.id})}
     ]
   },
+
   {path: "/", redirect: "/home"}
 ]
 
