@@ -1,6 +1,5 @@
 <template>
   <div data-v-957c9522="" msg="atguigu">
-    <h2>{{$route.path}}</h2>
     <h2 data-v-957c9522="">home组件</h2>
     <div data-v-957c9522="">
       <ul data-v-957c9522="" class="nav nav-tabs">
