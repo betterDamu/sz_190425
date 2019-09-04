@@ -3,7 +3,7 @@ import routes from "@/routes"
 
 const router = new VueRouter({
   mode:"hash",
-  linkExactActiveClass:"active",
+  linkActiveClass:"active",
   routes
 })
 
