@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <v-button></v-button>
+        {{new Date() | dateFilter}}
+        <div v-move="300">123</div>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/moment.js/2.24.0/moment.min.js"></script>
+<script src="myPlugin.js"></script>
+<script>
+    Vue.use(MyPlugin)
+    new Vue({
+        el:"#app"
+    })
+</script>
+</html>
