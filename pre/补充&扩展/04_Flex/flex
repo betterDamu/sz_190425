@@ -1,0 +1,34 @@
+1. 两组重要的概念
+    容器 项目
+    主轴 侧轴
+
+2. 项目默认情况下永远排列在主轴的正方向上
+
+3.
+    容器(display:flex)
+        --- 如何控制主轴是哪一根以及主轴的方向 侧轴是哪一根侧轴的方向
+            flex-direction : row / row-reverse / column / column-reverse
+            flex-wrap: nowrap wrap wrap-reverse
+            flex-flow: flex-direction flex-wrap;
+
+        --- 富裕空间管理
+            主轴 justify-content
+            侧轴
+                align-content(以多行多列为分配基准 flex-wrap必须不是nowrap)
+                align-self(以单行单列为分配基准 项目上的属性 优先级高)
+                align-items(以单行单列为分配基准)
+
+    项目(display:flex元素的子元素)
+        --- 其他属性
+            order
+        --- 弹性空间管理(等分等比例布局)
+            flex-grow  代表分配主轴剩余的富裕空间
+            flex:2
+                flex-grow: 2 flex-shrink:1 flex-basis:0%
+
+4.
+    flex-start : 富裕空间在主轴的正方向
+    flex-end   : 富裕空间在主轴的反方向
+    center     : 富裕空间在主轴的两边
+    space-between: 富裕空间在项目的之间
+    space-around:  富裕空间在项目的两边

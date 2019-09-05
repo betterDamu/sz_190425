@@ -1,12 +1,17 @@
 <template>
     <div>
       <ul>
-        <li v-for="item in list">
+        <li style="margin-top: 5px" v-for="item in list">
           <!--<a href="#">{{item.title}}</a>-->
-          <router-link :to="`/home/message/messageDetail/${item.id}`" >{{item.title}}</router-link>
+          <!--<router-link :to="`/home/message/messageDetail/${item.id}`" >{{item.title}}</router-link>-->
+          {{item.title}}
+          <button style="margin-left: 5px" @click="pushRoute(item.id)">push</button>
+          <button style="margin-left: 5px" @click="replaceRoute(item.id)">replace</button>
         </li>
       </ul>
       <router-view></router-view>
+      <br>
+      <button @click="backRoute">back</button>
     </div>
 </template>
 
@@ -25,6 +30,17 @@
         data(){
           return {
             list:[]
+          }
+        },
+        methods:{
+          pushRoute(id){
+            this.$router.push(`/home/message/messageDetail/${id}`)
+          },
+          replaceRoute(id){
+            this.$router.replace(`/home/message/messageDetail/${id}`)
+          },
+          backRoute(){
+            this.$router.back()
           }
         },
         mounted(){

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #wrap{
+            display: flex;
+            width: 300px;
+            height: 300px;
+            border: 1px solid;
+
+            /*align-items:   单行 多行都有用 只是在多行时 优先级低*/
+            /*align-content: 多行中有用*/
+            /*align-self:   单行有用*/
+
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items:center ;  /*按行为单位的*/
+            align-content:flex-start /*按整体元素为单位的*/
+        }
+        #wrap .item{
+            width: 50px;
+            height: 50px;
+            background: pink;
+            border: 1px solid;
+            box-sizing: border-box;
+        }
+        #wrap .item:nth-child(1){
+            background: gray;
+            align-self: flex-end;
+        }
+        #wrap .item:nth-child(9){
+            order: -1;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+</body>
+<script>
+    /*
+        1. 容器 项目
+        2. 主轴 侧轴
+
+        项目永远排列在主轴的正方向上
+
+
+    */
+</script>
+</html>

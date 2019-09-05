@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>new</title>
+    <style>
+        .wrap{
+            display: flex;
+            border: 1px solid;
+            width: 400px;
+            margin: 0 auto;
+        }
+        .wrap .item{
+            background: gray;
+            border: 1px solid;
+            box-sizing: border-box;
+            color: white;
+            text-align: center;
+        }
+        .wrap .item{
+            width: 50px;
+        }
+
+        .wrap .item:nth-child(1){flex-grow: 1}
+        .wrap .item:nth-child(2){flex-grow: 2}
+        .wrap .item:nth-child(3){flex-grow: 3}
+        .wrap .item:nth-child(4){flex-grow: 4}
+        .wrap .item:nth-child(5){flex-grow: 5}
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+</body>
+</html>

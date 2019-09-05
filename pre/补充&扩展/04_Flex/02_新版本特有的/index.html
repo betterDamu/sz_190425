@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>new</title>
+    <style>
+        .wrap{
+            display: flex;
+            width: 200px;
+            height: 300px;
+            border: 1px solid;
+            /*控制主轴是哪一根 以及主轴的方向*/
+            /*flex-direction: row;*/
+            /*控制侧轴的方向*/
+            /*flex-wrap: wrap-reverse;*/
+            flex-flow: row wrap;
+
+
+            /*富裕空间管理*/
+            justify-content: flex-start;
+            align-items:flex-start;
+            align-content:flex-start ;
+        }
+        .wrap .item{
+            width: 50px;
+            height: 50px;
+            background: pink;
+            text-align: center;
+            line-height: 50px;
+            align-self:flex-start ;
+        }
+
+        .wrap .item:nth-child(1){
+            order: 10;
+        }
+        .wrap .item:nth-child(2){
+            order: 2;
+        }
+        .wrap .item:nth-child(3){
+            order: 3;
+        }
+        .wrap .item:nth-child(4){
+            order: 4;
+        }
+        .wrap .item:nth-child(5){
+            order: 5;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+</body>
+</html>

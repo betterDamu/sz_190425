@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>new</title>
+    <style>
+        .wrap{
+            display: flex;
+            border: 1px solid;
+            width: 400px;
+            margin: 0 auto;
+        }
+        .wrap .item{
+            background: gray;
+            border: 1px solid;
+            box-sizing: border-box;
+            color: white;
+            text-align: center;
+        }
+        .wrap .item{
+            width: 300px;
+            flex-basis: 0%;
+            /*flex-shrink: 1;
+            flex-grow: 1;
+            flex-basis: 0%;*/
+            /*flex: 1;*/  /*就是用来做等分布局的*/
+        }
+
+        /*.wrap .item:nth-child(1){flex: 1}*/
+        /*.wrap .item:nth-child(2){flex: 2}*/
+        /*.wrap .item:nth-child(3){flex: 3}*/
+        /*.wrap .item:nth-child(4){flex: 4}*/
+        /*.wrap .item:nth-child(5){flex: 5}*/
+
+        .wrap .item:nth-child(1){flex-grow: 1}
+        .wrap .item:nth-child(2){flex-grow: 2}
+        .wrap .item:nth-child(3){flex-grow: 3}
+        .wrap .item:nth-child(4){flex-grow: 4}
+        .wrap .item:nth-child(5){flex-grow: 5}
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+</body>
+</html>

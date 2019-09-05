@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap{
+            width: 300px;
+            height: 300px;
+            border: 1px solid;
+            margin: 50px;
+            position: relative;
+        }
+       /*
+            left     默认值auto
+            right    默认值auto
+            top      默认值auto
+            bottom   默认值auto
+
+            height   默认值auto
+            width    默认值auto
+
+            padding  默认值0
+            margin   默认值0
+            border   默认值0
+
+
+            一个绝对定位的元素
+                它横向上   盒模型相关的值 + left + right = 包含块padding-box的尺寸
+                它纵向上   盒模型相关的值 + left + right = 包含块padding-box的尺寸(300)
+                       margin-top            auto       0
+                       margin-bottom         auto       0
+                       border-top-width      没有渲染   没有渲染
+                       border-bottom-width   没有渲染   没有渲染
+                       padding-top           0          0
+                       padding-bottom        0          0
+                       height                100px      auto
+
+
+             1. 这个css属性是干嘛的
+             2. 这个css属性可选值有哪些
+             3. 这个css属性默认值是谁
+             4. 这个属性值可以是百分百 那百分百参照于谁
+             5. 这个 css属性是否可继承
+        */
+        /*#app{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;  !*margin 0 auto;*!
+
+            background: pink;
+        }*/
+
+        #app{
+            background: pink;
+            display: inline-block;
+            position: absolute;
+            left: 50%;  /*百分比参照于包含块*/
+            top: 50%;   /*百分比参照于包含块*/
+            transform: translate3d(-50%,-50%,0);   /*translate3d中的百分比参照于自身*/
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="app">
+            123
+        </div>
+    </div>
+</body>
+</html>

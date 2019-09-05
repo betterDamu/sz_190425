@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap{
+            width: 100px;
+            height: 400px;
+            display:flex;
+        }
+        .item{
+            width: 50px;
+            height: 50px;
+            background: pink;
+            text-align: center;
+            flex-shrink: 1;
+        }
+        .item:nth-child(1){
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+</div>
+</body>
+<script>
+    // 溢出:300
+    // flex-shrink总和:5
+    // 每一项减 60
+
+
+    /*
+        1.计算收缩因子与基准值乘的总和
+            200*1 + 50*4 = 400
+        2.计算收缩因数
+            收缩因数=（项目的收缩因子*项目基准值）/第一步计算总和
+            1 * 200 / 400 = .5
+            1 * 50 / 400 = .125
+        3.移除空间的计算
+            移除空间= 项目收缩因数 x 负溢出的空间
+               .5 * 300 = 150
+               .125 * 300 = 37.5
+    */
+</script>
+</html>

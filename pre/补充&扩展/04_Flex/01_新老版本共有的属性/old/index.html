@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>old</title>
+    <style>
+        .wrap{
+            display: -webkit-box;
+            width: 300px;
+            height: 300px;
+            border: 1px solid;
+
+            /*控制主轴是哪一根 以及主轴的方向*/
+            -webkit-box-orient:vertical;
+            -webkit-box-direction:reverse;
+
+            /*富裕空间管理 只决定富裕空间的位置 不会去分配富裕空间*/
+            -webkit-box-pack:start;
+            -webkit-box-align:center;
+        }
+        .wrap .item{
+            width: 50px;
+            height: 50px;
+            background: pink;
+            text-align: center;
+            line-height: 50px;
+
+            /*把主轴的富裕空间按比例的分配给项目*/
+            /*-webkit-box-flex: 1;*/
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+</div>
+</body>
+</html>
