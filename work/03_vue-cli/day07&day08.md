@@ -1,8 +1,9 @@
-### vue-cli
+### day07
+#### vue-cli
     npm i vue-cli -g
     vue init webpack proname
 
-### todolist
+#### todolist
     1. 拆分静态组件
         App
             Header
@@ -66,7 +67,8 @@
             watch!!!
             deep watch!!!
 
-        -- 插槽
+### day08
+#### 插槽
             普通插槽
             具名插槽
                 单向数据流  父组件 ---html模板---> 子组件
