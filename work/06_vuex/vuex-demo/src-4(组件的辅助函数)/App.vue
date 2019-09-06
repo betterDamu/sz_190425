@@ -5,14 +5,11 @@
      <p>{{fullName}}</p>
      <button @click="add(2)">+</button>
      <button @click="dec(2)">-</button>
-     <br>
-     <button style="margin-top: 10px" @click="addAsync({msg:`msg666`})">+(async)</button>
   </div>
 </template>
 
 <script>
-  "use strict"
-  import { mapState,mapGetters,mapMutations,mapActions } from 'vuex'
+  import { mapState,mapGetters,mapMutations } from 'vuex'
   export default {
     name: 'App',
     computed:{
@@ -20,14 +17,7 @@
       ...mapGetters(["fullName","flag"])
     },
     methods:{
-      ...mapMutations(["addOne","add","dec"]),
-      ...mapActions(["addAsync"])
-      /*addAsync(){
-        this.$store.dispatch({
-          type:"addAsync",
-          msg:"msg啦啦啦"
-        })
-      }*/
+      ...mapMutations(["addOne","add","dec"])
     }
   }
 </script>

@@ -1,4 +1,3 @@
-"use strict"
 import Vuex from "vuex";
 import Vue from "vue";
 Vue.use(Vuex)
@@ -25,21 +24,6 @@ const store = new Vuex.Store({
     },
     dec(state,step){
       state.count -= step
-    },
-    addAsync(state){
-      // !!! mutation中的代码必须是同步的修改数据
-      /*setTimeout(()=>{
-        state.count += 3;
-      },3000)*/
-      state.count += 3;
-    }
-  },
-  actions:{
-    addAsync({commit},{msg}){
-      setTimeout(()=>{
-        console.log(msg)
-        commit("addAsync")
-      },3000)
     }
   }
 })
