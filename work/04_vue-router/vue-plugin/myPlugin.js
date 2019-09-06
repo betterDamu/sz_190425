@@ -30,6 +30,8 @@
                 })
             }
         })
+
+        // Vue.prototype.$damu={}
     }
 
     //命名空间

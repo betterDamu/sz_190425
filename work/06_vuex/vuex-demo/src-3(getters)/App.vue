@@ -3,23 +3,29 @@
      <span @click="addOne">{{count}}</span>
      <span>这是一个 <strong style="color: red">{{flag}}</strong> 数</span>
      <p>{{fullName}}</p>
-     <button @click="add(2)">+</button>
-     <button @click="dec(2)">-</button>
   </div>
 </template>
 
 <script>
-  import { mapState,mapGetters,mapMutations } from 'vuex'
-  export default {
-    name: 'App',
-    computed:{
-      ...mapState(["count"]),
-      ...mapGetters(["fullName","flag"])
+export default {
+  name: 'App',
+  computed:{
+    count(){
+      return this.$store.state.count;
     },
-    methods:{
-      ...mapMutations(["addOne","add","dec"])
+    fullName(){
+      return this.$store.getters.fullName;
+    },
+    flag(){
+      return this.$store.getters.flag;
+    }
+  },
+  methods:{
+    addOne(){
+      this.$store.commit("add",{msg:"msg",msg2:"msg2"})
     }
   }
+}
 </script>
 
 <style>

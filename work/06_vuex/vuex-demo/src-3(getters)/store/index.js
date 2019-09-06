@@ -16,14 +16,9 @@ const store = new Vuex.Store({
     }
   },
   mutations:{
-    addOne(state){
+    add(state,obj){
       state.count++
-    },
-    add(state,step){
-      state.count += step
-    },
-    dec(state,step){
-      state.count -= step
+      console.log(obj.msg,obj.msg2)
     }
   }
 })
