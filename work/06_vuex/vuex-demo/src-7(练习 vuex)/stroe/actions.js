@@ -2,8 +2,9 @@ import axios from "axios"
 import {
   SEARCHNAME,
   REQING,
-  REQSUCCSEEHASDATA,
-  REQSUCCSEENODATA,
+  // REQSUCCSEEHASDATA,
+  // REQSUCCSEENODATA,
+  REQSUCCSEE,
   REQERROR} from "./mutation_types"
 
 export default {
@@ -28,14 +29,14 @@ export default {
         name:item["login"]
       }))
 
-
-      if(users.length === 0){
+      store.commit(REQSUCCSEE,{users})
+      /*if(users.length === 0){
           //请求成功(无数据)
         store.commit(REQSUCCSEENODATA,{users})
       }else {
         //请求成功(有数据)
         store.commit(REQSUCCSEEHASDATA,{users})
-      }
+      }*/
 
     }catch (error) {
       //请求失败
