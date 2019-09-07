@@ -20,3 +20,15 @@ node 第三方包的查找规则:
     4. 如果3不成功 那继续找当前包底下的index.js index.json
     5. 如果 3 4 都没成功 直接报错
 */
+
+/*
+webpack 第三方包的查找规则:
+    1. 要么去 resolve.alias 中找别名
+
+    1.要么去 resolve.modules 中找对应的目录
+    2. 找包的配置文件 package.json
+    3. 找package.json的字段  ( resolve.mainFields指定的字段)
+    4. 如果3不成功 那继续找当前包底下的    resolve.mainFiles.resolve.extensions
+    5. 如果 3 4 都没成功 直接报错
+*/
+
