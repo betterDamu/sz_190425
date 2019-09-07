@@ -1,44 +1,24 @@
 <template>
   <div id="app">
-     <span @click="addOne">{{count}}</span>
-     <span>这是一个 <strong style="color: red">{{flag}}</strong> 数</span>
-     <p>{{fullName}}</p>
-     <button @click="add(2)">+</button>
-     <button @click="dec(2)">-</button>
-     <br>
-     <button style="margin-top: 10px" @click="addAsync({msg:`msg666`})">+(async)</button>
+    <div class="container">
+      <v-search></v-search>
+      <v-list></v-list>
+    </div>
   </div>
 </template>
 
 <script>
-  "use strict"
-  import { mapState,mapGetters,mapMutations,mapActions } from 'vuex'
+  import search from "@/components/search.vue"
+  import list from "@/components/list.vue"
   export default {
     name: 'App',
-    computed:{
-      ...mapState(["count"]),
-      ...mapGetters(["fullName","flag"])
-    },
-    methods:{
-      ...mapMutations(["addOne","add","dec"]),
-      ...mapActions(["addAsync"])
-      /*addAsync(){
-        this.$store.dispatch({
-          type:"addAsync",
-          msg:"msg啦啦啦"
-        })
-      }*/
+    components:{
+      "v-search":search,
+      "v-list":list
     }
   }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
