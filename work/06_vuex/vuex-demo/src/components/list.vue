@@ -1,36 +1,24 @@
 <template>
   <div class="row">
     <h3 v-if="firstShow" style="text-align: center">请输入查询用户</h3>
-    <h3 v-else-if="loading" style="text-align: center" >loading...</h3>
-    <div v-else class="card" v-for="card in cards">
-      <a :href="card.html_url" target="_blank">
-        <img :src="card.avatar_url" style='width: 100px'/>
+    <h3 v-else-if="loading" style="text-align: center">loading....</h3>
+    <h3 v-else-if="error" style="text-align: center;color: red">{{error}}</h3>
+    <h3 v-else-if="users.length === 0" style="text-align: center">查无此人</h3>
+    <div v-else class="card" v-for="user in users">
+      <a :href="user.href" target="_blank">
+        <img :src="user.avator" style='width: 100px'/>
       </a>
-      <p class="card-text">{{card.login}}</p>
+      <p class="card-text">{{user.name}}</p>
     </div>
   </div>
 </template>
 
 <script>
-    import Pubsub from "pubsub-js"
-    import axios from  "axios"
+    import {mapState} from "vuex"
     export default {
         name: "list",
-        data(){
-          return {
-            firstShow:true,
-            loading:true,
-            cards:[]
-          }
-        },
-        mounted(){
-          Pubsub.subscribe("notifyList", async (type,searchname)=>{
-            this.firstShow = false;
-            this.loading = true;
-            const  res =  await  axios.get(`https://api.github.com/search/users?q=${searchname}`)
-            this.cards = res.data.items
-            this.loading = false
-          })
+        computed:{
+          ...mapState(["firstShow","loading","error","users"])
         }
     }
 </script>

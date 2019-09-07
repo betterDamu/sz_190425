@@ -2,26 +2,28 @@
   <section class="jumbotron">
     <h3 class="jumbotron-heading">Search Github Users</h3>
     <div>
-      <input type="text" placeholder="enter the name you search" v-model.trim="serachName" />
-      <button @click="notifyList">Search</button>
+      <input type="text" placeholder="enter the name you search" v-model.trim.lazy="searchName"/>
+      <button @click="getUsers">Search</button>
     </div>
   </section>
 </template>
 
 <script>
-    import Pubsub from "pubsub-js"
+    import {mapActions} from "vuex";
     export default {
         name: "search",
-        data(){
-          return {
-            serachName:""
+        computed:{
+          searchName:{
+            get(){
+              return this.$store.state.searchName
+            },
+            set(searchName){
+              this.$store.dispatch("searchName",{searchName})
+            }
           }
         },
         methods:{
-          notifyList(){
-            Pubsub.publish("notifyList",this.serachName);
-            this.serachName =""
-          }
+          ...mapActions(["getUsers"])
         }
     }
 </script>
