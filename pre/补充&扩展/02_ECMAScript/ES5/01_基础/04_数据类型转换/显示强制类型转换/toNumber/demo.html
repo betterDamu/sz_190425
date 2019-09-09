@@ -14,7 +14,7 @@
 			3.parseInt  parseFloat
 				字符串 --> 数字
 		*/
-		var a = null;
+		/*var a = null;
 		var b = undefined;
 		var c="JJJ";
 		var d = true;
@@ -28,20 +28,17 @@
 		console.log(ar,typeof ar);
 		console.log(br,typeof br);
 		console.log(cr,typeof cr);
-		console.log(dr,typeof dr);
+		console.log(dr,typeof dr);*/
 		
 		
 		
 		//引用数据类型
-		var arr =[1,2,3];
-		arr.valueOf=function(){
-			return 1;
-		}
-		arr.toString=function(){
-			return 2;
-		}
-		var arrR = +arr;
-		console.log(arrR,typeof arrR);
+		Array.prototype.valueOf=function () {
+			return undefined
+        }
+        var arr =[1,2,3]
+        var arrR = +arr;
+        console.log(arrR,typeof arrR)
 		
 		
 		

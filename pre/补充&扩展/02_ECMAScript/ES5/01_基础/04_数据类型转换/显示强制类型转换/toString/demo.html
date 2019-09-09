@@ -15,30 +15,32 @@
 					布尔--->字符串
 					引用数据类型--->字符串
 		*/
-		var a = null;
+/*		var a = null;
 		var b = undefined;
 		var c = true;
 		var d = 123;
 		
-//		var ar = a.toString();
-//		var br = b.toString();
+		var ar = a.toString();
+		var br = b.toString();
 		var cr = c.toString();
 		var dr = d.toString();
 		
-//		console.log(ar,typeof ar);
-//		console.log(br,typeof br);
+		console.log(ar,typeof ar);
+		console.log(br,typeof br);
 		console.log(cr,typeof cr);
-		console.log(dr,typeof dr);
+		console.log(dr,typeof dr);*/
 		
 		
 		//引用数据类型
 		var arr =[1,2,3];
-		arr.valueOf=function(){
+		/*arr.valueOf=function(){
 			return 11;
-		}
+		}*/
 		arr.toString=function(){
-			return 22;
+			return null;
 		}
+
+		//本身就是进行字符串话  直接就去toString方法
 		var arrR = String(arr);
 		console.log(arrR,typeof arrR);
 		
