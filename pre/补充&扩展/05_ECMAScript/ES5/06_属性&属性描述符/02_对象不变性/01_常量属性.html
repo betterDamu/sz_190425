@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var obj={
+			
+		};
+		Object.defineProperty(obj,"age",{
+			value:18,
+//			writable:false,
+//			configurable:false,
+//			enumerable:true
+		})
+		Object.defineProperty(obj,"age",{
+			value:18,
+			writable:true,
+		})
+		
+		
+		obj.age=30;
+		console.log(obj.age);
+	
+		//不会出现在for in中
+		for(item in obj){
+			console.log(item);
+		}
+	</script>
+</html>

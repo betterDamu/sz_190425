@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		javascript中的数据类型:
+			基本数据类型				(对应的值)
+				空					null
+				未定义				undefined
+				布尔类型				true/false
+				数字					1,2,3....
+				字符串				"1","2","3",'a','b','c'....
+			引用数据类型				(对应的值)
+				对象					数组,函数,{}....
+		*/
+			
+		
+	
+		/*基本数据类性*/
+		console.log(typeof undefined 	=== "undefined")// true
+		console.log(typeof null		=== "object")	// true
+		console.log(typeof true 	 	=== "boolean")	// true
+		console.log(typeof 42 		 	=== "number")	// true
+		console.log(typeof "42" 	 	=== "string")	// true
+		
+		
+		/*引用数据类型*/
+		console.log(typeof {} 			=== "object")	// true
+		console.log(typeof []			=== "object")	// true
+		console.log(typeof function(){} === "function") // true  函数是javascript中的一等公民
+		
+		
+		function Person(name,age){
+			this.name=name;
+			this.age=age
+		}
+		console.log(typeof new Person("达姆",18) === "object") // true
+		
+	</script>
+</html>

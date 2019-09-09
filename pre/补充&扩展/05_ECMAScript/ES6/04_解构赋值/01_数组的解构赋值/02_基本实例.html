@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let [foo, [[bar], baz]] = [1, [[2], 3]];
+	let [ , , third] = ["foo", "bar", "baz"];
+	let [x, , y] = [1, 2, 3];
+	let [head, ...tail] = [1, 2, 3, 4];
+	let [a, b, ...z] = ['a'];
+	
+	console.log(foo,bar,baz);
+	console.log(third);
+	console.log(x,y);
+	console.log(head,tail,...[1,2,3]);
+	console.log(a,b,z);
+	
+
+</script>
+</html>

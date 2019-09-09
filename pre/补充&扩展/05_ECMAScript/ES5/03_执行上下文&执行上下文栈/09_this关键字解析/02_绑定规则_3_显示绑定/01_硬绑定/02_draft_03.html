@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+//	类bind函数的实现
+		function foo(something,otherthing) {
+			console.log( this.a+" "+ something+" "+  otherthing);
+			return this.a + something;
+		}
+		// 简单的辅助绑定函数    bind函数的作用：返回一个新的函数，并且指定该新函数的this指向
+		function bind(fn, obj) {
+			return function() {
+					return fn.apply( obj, arguments );
+				};
+		}
+		
+		var obj = {
+			a:2
+		};
+		var obj_test = {
+			a:22
+		};
+		
+		
+		var bar = bind( foo, obj);
+		var b = bar(3); // 2 3 undefined
+		console.log( b ); // 5
+		bar.call(obj_test,3);//2 3 undefined
+	</script>
+</html>

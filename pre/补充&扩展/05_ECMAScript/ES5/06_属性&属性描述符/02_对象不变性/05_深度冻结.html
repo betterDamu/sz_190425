@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		Object.deepFreeze = function(obj) {
+		  var propNames = Object.getOwnPropertyNames(obj);
+		  propNames.forEach(function(name){
+		    var prop = obj[name];
+		    if (typeof prop == 'object' && prop !== null) {
+		      Object.deepFreeze(prop);
+		    }
+		  });
+
+		  return Object.freeze(obj);
+		}
+	</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		function Person(age,name){
+			this.age=age;
+			this.name=name;
+			this.eat=function(){
+				console.log("吃很多")
+			}
+		}
+		
+		
+		function Teacher(course,age,name){
+			Person.call(this,age,name);
+			this.course =course;
+		}
+		
+		function Student(num,age,name){
+			Person.call(this,age,name);
+			this.num =num;
+		}
+		
+		var damu = new Teacher("qkl",18,"达姆");
+		damu.eat();
+		var damu2 = new Student(1,18,"达姆");
+		damu2.eat();
+		console.log(damu,damu2);
+		
+	</script>
+</html>

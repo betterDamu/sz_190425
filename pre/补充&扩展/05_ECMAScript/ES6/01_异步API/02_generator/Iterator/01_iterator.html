@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+        遍历器（Iterator）是一种接口，为各种不同的数据结构提供统一的访问机制。任何数据结构只要部署 Iterator 接口，就可以完成遍历操作（即依次处理该数据结构的所有成员）
+            Iterator 的作用有三个：
+                    一是为各种数据结构，提供一个统一的、简便的访问接口；
+                    二是使得数据结构的成员能够按某种次序排列；
+                    三是 ES6 创造了一种新的遍历命令for...of循环，Iterator 接口主要供for...of消费
+     */
+
+    let arr =["a","b","c","d"];
+    // for(key in arr){
+    //     console.log(key)
+    // }
+    // for(item of arr){
+    //     console.log(item)
+    // }
+
+    // console.log(typeof Symbol.iterator);
+    // console.log(arr[Symbol.iterator]);
+    // console.log(arr[Symbol.iterator]());
+
+    let iterator =  arr[Symbol.iterator]();
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+
+
+</script>
+</html>

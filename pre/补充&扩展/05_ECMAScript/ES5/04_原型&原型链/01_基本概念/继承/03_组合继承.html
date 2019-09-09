@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+	
+		/*
+		 js中的原型链继承只有一个目的
+			降低创建对象的开销!!!
+		*/
+	
+		
+		Person.prototype.eat=function(){
+			console.log("吃很多")
+		}
+		function Person(age,name){
+			this.age=age;
+			this.name=name;
+		}
+		
+		
+		
+		
+		Teacher.prototype = new Person();
+		Teacher.prototype.constructor = Teacher;
+		console.log(Teacher.prototype.constructor);
+		function Teacher(course,age,name){
+			Person.call(this,age,name);
+			this.course =course;
+		}
+		
+		Student.prototype = new Person();
+		function Student(num,age,name){
+			Person.call(this,age,name);
+			this.num =num;
+		}
+		
+		
+		/*
+		damu.__proto__  ---> Teacher.prototype
+									Teacher.prototype.__proto__  --> Object.prototype
+											Object.prototype.__proto__ ---> null
+											
+						Teacher.prototype = new Person();
+						
+		damu.__proto__  ---> Teacher.prototype
+							Teacher.prototype.__proto__ ---> Person.prototype
+								Person.prototype.__proto__ ---> Object.prototype
+									Object.prototype.__proto__ ---> null
+		*/
+		var damu = new Teacher("qkl",18,"达姆");
+		var damu2 = new Student(1,18,"达姆");
+		damu.eat();
+		damu2.eat();
+		console.log(damu,damu2);
+		console.log(damu.constructor);
+		
+	</script>
+</html>

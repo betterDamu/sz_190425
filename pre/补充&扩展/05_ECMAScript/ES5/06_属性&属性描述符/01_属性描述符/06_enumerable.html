@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var obj={
+			
+		};
+		Object.defineProperty(obj,"a",{
+			value:"a",
+			enumerable:true
+		});
+		Object.defineProperty(obj,"b",{
+			value:"b",
+			enumerable:false
+		});
+		
+		
+		
+		for(var item in obj){
+			console.log(item);
+		}
+	</script>
+</html>

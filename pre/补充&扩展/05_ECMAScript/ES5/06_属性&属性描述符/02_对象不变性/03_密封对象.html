@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var obj={
+			name:"snw",
+			age:18,
+			sex:"man"
+		}
+		Object.seal(obj);
+		
+		obj.age=20;
+		console.log(obj.age)
+		
+		
+		Object.defineProperty(obj,"age",{
+			configurable:true
+		})
+		
+		
+		
+	</script>
+</html>

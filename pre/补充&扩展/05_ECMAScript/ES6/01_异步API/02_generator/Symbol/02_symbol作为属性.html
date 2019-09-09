@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var mySymbol = Symbol();
+
+    // 第一种写法
+    var a = {};
+    a[mySymbol] = 'Hello!';
+
+    // 第二种写法
+    var a = {
+        [mySymbol]: 'Hello!'
+    };
+
+    // 以上写法都得到同样结果
+    a[mySymbol] // "Hello!"
+
+</script>
+</html>

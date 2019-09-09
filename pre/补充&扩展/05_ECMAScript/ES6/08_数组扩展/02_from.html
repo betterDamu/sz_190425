@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+    </ul>
+</body>
+<script>
+    var liNodes = document.querySelectorAll("ul > li");
+    var arr = Array.from(liNodes);
+    arr.map(function (item) {
+        console.log(item)
+    })
+</script>
+</html>

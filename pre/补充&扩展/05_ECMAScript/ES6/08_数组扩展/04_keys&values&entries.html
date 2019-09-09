@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    const array1 = ['a', 'b', 'c'];
+    const iterator = array1.keys();
+
+    for (let key of iterator) {
+        console.log(key); // expected output: 0 1 2
+    }
+
+
+    const iterator2 = array1.values();
+    for (const value of iterator2) {
+        console.log(value); // expected output: "a" "b" "c"
+    }
+
+    const iterator3 = array1.entries();
+    for (const entry of iterator3) {
+        console.log(entry); // expected output: [0, "a"] [1, "b"] [2, "c"]
+    }
+
+</script>
+</html>

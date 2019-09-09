@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    var symb1 = Symbol();
+    var symb2 = Symbol();
+    console.log(typeof symb1);
+    console.log(typeof symb2);
+    console.log(symb1,symb2,symb1 === symb2);
+
+    var symb3 = Symbol("foo");
+    var symb4 = Symbol("bar");
+    console.log(symb3,symb4,symb3 === symb4);
+
+    var symb5 = Symbol("foo");
+    var symb6 = Symbol("foo");
+    console.log(symb5,symb6,symb5 === symb6);
+
+
+
+
+
+
+</script>
+</html>

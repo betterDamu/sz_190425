@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise对象</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+
+    function *test() {
+        var flag = yield setTimeout(function (flag) {
+                if(flag){
+                    console.log("success-1")
+                    iterator.next(flag);
+                }else{
+                    console.log("error-1");
+                    return;
+                }
+            },1000,true);
+
+        var flag2 = yield setTimeout(function (flag) {
+                if(flag){
+                    console.log("success-2");
+                    iterator.next(flag);
+                }else{
+                    console.log("error-2");
+                    return;
+                }
+            },1000,flag);
+
+        yield setTimeout(function (flag) {
+                if(flag){
+                    console.log("success-3");
+                }else{
+                    console.log("error-3");
+                    return;
+                }
+        },1000,!flag2)
+    };
+
+    var iterator = test();
+    iterator.next();
+
+</script>
+
+</html>

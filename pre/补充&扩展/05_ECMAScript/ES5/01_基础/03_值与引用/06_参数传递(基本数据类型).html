@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			基本数据类型总是通过值复制的方式来赋值/传递
+			引用数据类型总是通过引用复制来完成赋值/传递
+		-->
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		function foo(wrapper){
+			wrapper.a=2;
+			console.log(wrapper.a);//2
+		}
+		
+		var wrapper={
+			a:1
+		}
+		foo(wrapper);
+		console.log(wrapper.a);//2
+	</script>
+</html>

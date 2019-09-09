@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+//	我们来看看这个显式绑定变种到底是怎样工作的。我们创建了函数 bar() ，
+//	并在它的内部手动调用了 foo.call(obj) ，
+//	因此强制把 foo 的 this 绑定到了 obj 。无论之后如何调用函数 bar ，它总会手动
+//	在 obj 上调用 foo 。这种绑定是一种显式的强制绑定，因此我们称之为硬绑定。
+		function foo() {
+			console.log( this.a );
+		}
+		
+		var a =1;
+		var obj = {
+			a:2
+		};
+		var obj_test = {
+			a:"test"
+		};
+		var bar = function() {
+			foo.call( obj );
+		};
+		
+		bar(); //2
+		setTimeout( bar, 1000 ); // 2
+		bar.call( obj_test ); //2   硬绑定的bar不可能再修改它的this(指的是foo中的this)
+		
+		
+//		1 2 test 2 ------1000------ 1 2
+	</script>
+</html>

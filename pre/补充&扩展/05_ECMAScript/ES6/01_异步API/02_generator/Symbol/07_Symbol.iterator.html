@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var arr = ["a","b","c","d"];
+    /*arr.map(function (item) {
+        console.log(item);
+    })*/
+    /*for (var item of arr){
+        console.log(item)
+    }
+
+    for (var key in arr){
+        console.log(key)
+    }*/
+
+    /*console.log(typeof  Symbol.iterator);
+    console.log(typeof  arr[Symbol.iterator]);
+    console.log(arr[Symbol.iterator]());*/
+
+    //Symbol.iterator:迭代器
+    //iterator :迭代器对象
+    var iterator = arr[Symbol.iterator]();
+    //迭代对象
+    var obj = iterator.next(); console.log(obj);
+    var obj = iterator.next(); console.log(obj);
+    var obj = iterator.next(); console.log(obj);
+    var obj = iterator.next(); console.log(obj);
+    var obj = iterator.next(); console.log(obj);
+    var obj = iterator.next(); console.log(obj);
+    var obj = iterator.next(); console.log(obj);
+
+</script>
+</html>

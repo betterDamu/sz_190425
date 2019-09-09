@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		/*
+			在js中本质上不存在构造函数,只存在函数的构造调用。
+			如果一个函数被new调用了,那么我们就可以称被调用的
+			那个函数是构造函数.
+			
+			var a ={} 		  其实是 	var a = new Object() 		的语法糖
+			var a =[] 		  其实是 	var a = new Array() 		的语法糖
+			function Foo(){} 其实是 	var Foo = new Function(){}	的语法糖
+			
+		*/
+		
+		//Foo是构造函数
+		function Foo(name,age){
+			this.name = name;
+			this.age = age;
+			// 构造函数的最后一行一般都会有return this
+			// return this;
+		}
+		
+		//f是实例对象
+		var f = new Foo("damu",20);
+		console.log(f);
+		
+	</script>
+</html>

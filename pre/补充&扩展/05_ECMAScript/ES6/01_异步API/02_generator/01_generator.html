@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>generator</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+        yield关键字使生成器函数执行暂停，yield关键字后面的表达式的值返回给生成器的调用者。
+        yield关键字实际给生成器返回了一个IteratorResult对象，它有两个属性，value和done。
+                value属性是对yield表达式求值的结果，而done是false，表示生成器函数尚未完全完成
+
+        一旦遇到 yield 表达式，生成器的代码将被暂停运行，直到生成器的 next() 方法被调用。每次调用生成器的next()方法时，生成器都会恢复执行
+
+        如果将可选值传递给生成器的next()方法，则该值将成为生成器当前yield操作返回的值。
+    */
+    function* gen() {
+        console.log("--0--")
+        var y1 = yield 1;
+        console.log("--1--",y1)
+        var y2 = yield 2;
+        console.log("--2--",y2)
+        var y3=yield 3;
+        console.log("--3--",y3)
+    }
+
+    let g = gen();
+    console.log(g.next("next-1"))
+    console.log(g.next("next-2"))
+    console.log(g.next("next-3"))
+    console.log(g.next("next-4"))
+
+</script>
+</html>

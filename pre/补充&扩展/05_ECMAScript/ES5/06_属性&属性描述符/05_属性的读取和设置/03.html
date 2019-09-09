@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+//	如果属性不直接存在于对象中  在原型链上
+		Object.prototype.a="prototypeA";
+		console.log(Object.prototype);
+		var result = Object.getOwnPropertyDescriptor(Object.prototype,"a");
+		console.log(result);
+	
+//		①.该属性是数据描述符(没有setter/getter)
+//			-writbale为true
+//			直接在对象中添加一个属性，我们称之为屏蔽属性
+		var obj={};
+		obj.a="a";
+		console.log(obj,"------------------------------")
+
+
+//			-writbale为false
+//			报错，不会生成屏蔽属性
+		Object.defineProperty(Object.prototype,"a",{
+			writable:false
+		});
+		console.log(Object.prototype);
+		var result = Object.getOwnPropertyDescriptor(Object.prototype,"a");
+		console.log(result);
+		
+		var obj2={};
+		obj2.a="a";
+		console.log(obj2,"------------------------------")
+
+
+//		②.该属性是访问描述符
+//			调用set，不会生成屏蔽属性
+		Object.defineProperty(Object.prototype,"a",{
+//			get:function(){
+//				
+//			},
+			set:function(val){
+				
+			}
+		});
+		console.log(Object.prototype);
+		var result = Object.getOwnPropertyDescriptor(Object.prototype,"a");
+		console.log(result);
+
+		var obj3={};
+		obj3.a="a";
+		console.log(obj3,"------------------------------")
+
+	
+	</script>
+</html>

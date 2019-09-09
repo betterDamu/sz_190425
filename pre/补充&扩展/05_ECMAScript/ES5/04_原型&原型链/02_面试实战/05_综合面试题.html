@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>241123</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+
+
+		Foo.getName = function () { 
+			alert (2);
+		};
+        function getName() {
+            alert (5);
+        }
+		Foo.prototype.getName = function () { 
+			alert (3);
+		};
+        function Foo() {
+            getName = function () { alert (1); };
+            return this;
+        }
+        var getName = function () {
+			alert (4);
+		};
+	
+		Foo.getName(); //
+		getName();//
+		Foo().getName(); //
+		getName(); //
+		new Foo.getName(); //
+		new Foo().getName()//
+		
+	</script>
+</html>

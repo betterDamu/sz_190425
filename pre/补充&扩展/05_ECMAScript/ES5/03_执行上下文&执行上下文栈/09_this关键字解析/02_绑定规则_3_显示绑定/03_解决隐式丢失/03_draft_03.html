@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+//		如果把函数传入语言内置的函数而不是传入你自己声明的函数，结果是一样的，没有区别
+//		JavaScript环境中内置的 setTimeout() 函数实现和下面的伪代码类似：
+//		function setTimeout(fn,delay) {
+//			// 等待delay毫秒
+//			fn(); // <-- 调用位置！
+//		  }
+		function foo() {
+			console.log( this.a );
+		}
+		
+		var a = "oops, global"; // a是全局对象的属性
+		var obj = {
+			a: 2,
+			foo: foo
+		};
+		
+		setTimeout( foo.bind(obj), 1000 ); // "2"
+	</script>
+</html>

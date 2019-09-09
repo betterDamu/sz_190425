@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>04_闭包的生命周期</title>
+
+</head>
+<body>
+<script type="text/javascript">
+	/*
+			 什么时候创建了闭包?
+				
+			闭包被创建完放在了哪？
+				
+			闭包什么时候销毁？
+			
+			闭包的缺点
+			
+		*/
+  function fun1() {
+    //此处闭包已经产生
+    var a = 3;
+
+    function fun2() {
+      a++;
+      console.log(a);
+    }
+
+    return fun2;
+  }
+  var f = fun1();
+
+  f();
+  f();
+  f = null //此时闭包对象死亡
+</script>
+</body>
+</html>

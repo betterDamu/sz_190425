@@ -1,0 +1,3 @@
+function common(){
+	return "common";
+}

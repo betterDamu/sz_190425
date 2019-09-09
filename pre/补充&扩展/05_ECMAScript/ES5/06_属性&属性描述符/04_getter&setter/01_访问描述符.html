@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var obj={
+			get a(){
+//				return 2;
+				return this._a_;
+			},
+			set a(val){
+				this._a_=val;
+			}
+		}
+		
+		obj.a=3;
+		console.log(obj.a);
+		
+		
+//		var result =Object.getOwnPropertyDescriptor(obj,"a");
+//		console.log(result);
+	</script>
+</html>
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		//左查询：在变量所在的作用域链中找不到声明，浏览器引擎会在全局作用域内声明一个
+		
+				(function(){
+					function test(a){
+						var b=a;
+						console.log(b);//2
+					}
+					test(2);
+					console.log(b);//2 	
+				})()
+				console.log(b);//2
+		
+		
+		//		console.log(b);//b is not defined
+		//		(function(){
+		//			function test(a){
+		//				b=a;
+		//				console.log(b);//2
+		//			}
+		//			test(2);
+		//		})()
+		//		console.log(b);
+		
+	</script>
+</html>

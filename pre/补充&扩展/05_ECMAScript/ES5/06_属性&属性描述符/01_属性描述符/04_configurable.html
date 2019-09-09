@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var obj={
+			a:1
+		};
+		obj.a=3;
+		console.log(obj.a);
+		
+		
+		Object.defineProperty(obj,"a",{
+			value:4,
+			writable:true,
+			configurable:true,
+			emumerable:true
+		});
+		console.log(obj.a);
+		
+		
+		Object.defineProperty(obj,"a",{
+			value:5,
+			writable:true,
+			configurable:false,
+			emumerable:true
+		});
+		console.log(obj.a);
+		
+		
+		obj.a=6;
+		console.log(obj.a);
+		
+		Object.defineProperty(obj,"a",{
+			value:7,
+			writable:true,
+			configurable:true,
+			emumerable:true
+		});
+		console.log(obj.a);
+		
+		
+	</script>
+</html>

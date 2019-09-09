@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+//	这里有一个微妙但是非常重要的细节，虽然 this 的绑定规则完全取决于调用位置，
+//	但是只有 foo()运行在非 strict mode 下时，默认绑定才能绑定到全局对象；
+//	严格模式下调用foo()不会影响默认绑定规则
+		
+		
+		function foo() {
+			console.log( this.a );
+		}
+		var a = 2;
+		(function(){
+			"use strict";
+			foo(); 
+		})();
+	</script>
+</html>

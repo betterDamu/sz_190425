@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+//	如果属性直接存在于对象中  也在原型链上
+		Object.prototype.a="prototypeA";
+		console.log(Object.prototype)
+		
+		var obj={
+			get a(){
+				return this._a_;
+			},
+			set a(val){
+				this._a_="_a_";
+			}
+		}
+		obj.a="b";
+		console.log(obj)
+		console.log(Object.prototype)
+	</script>
+</html>

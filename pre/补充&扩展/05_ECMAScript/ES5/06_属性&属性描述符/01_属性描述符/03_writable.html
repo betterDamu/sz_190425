@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		"use strict"
+		var obj={
+			name:"snw"
+		};
+		Object.defineProperty(obj,"age",{
+			value:18,
+			writable:false,
+			configurable:true,
+			emumerable:true
+		});
+		obj.age=30;
+		console.log(obj.age);
+	</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+			1.Number()
+			2.+
+				在 JavaScript开源社区中，一元运算 + 被普遍认为是显式强制类型转换
+			3.parseInt  parseFloat
+				字符串 --> 数字
+		*/
+		var a = null;
+		var b = undefined;
+		var c="JJJ";
+		var d = true;
+		
+		
+		
+		var ar = +a;
+		var br = +b;
+		var cr = +c;
+		var dr = +d;
+		console.log(ar,typeof ar);
+		console.log(br,typeof br);
+		console.log(cr,typeof cr);
+		console.log(dr,typeof dr);
+		
+		
+		
+		//引用数据类型
+		var arr =[1,2,3];
+		arr.valueOf=function(){
+			return 1;
+		}
+		arr.toString=function(){
+			return 2;
+		}
+		var arrR = +arr;
+		console.log(arrR,typeof arrR);
+		
+		
+		
+	</script>
+</html>

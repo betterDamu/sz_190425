@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+//	参数传递其实就是一种隐式赋值，因此我们传入函数时也会被隐式赋值
+		function foo() {
+			console.log( this.a );
+		}
+		function doFoo(fn) {
+			// fn其实引用的是foo
+			fn(); // <-- 调用位置！
+		}
+		
+		var a = "oops, global"; // a是全局对象的属性
+		var obj = {
+			a: 2,
+			foo: foo
+		};
+		
+		doFoo(foo.bind(obj)); // "2"
+	</script>
+</html>

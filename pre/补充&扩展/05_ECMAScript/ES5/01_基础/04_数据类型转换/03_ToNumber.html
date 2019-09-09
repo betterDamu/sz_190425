@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+			Null==>0  ;  undefined==>NaN
+			Boolean：true==>1	false==>0
+			字符串
+				就是把字符串两边的空白字符去掉，然后把两边的引号去掉，
+				看它能否组成一个合法的数字。
+					如果是，转化结果就是这个数字；否则，结果是NaN。
+					当然也有例外，比如空白字符串转化为数字的结果是0。
+
+		*/
+		console.log(Number(null),Number(undefined),Number(true),Number("123"))
+		
+	</script>
+</html>

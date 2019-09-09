@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+//	之所以要在 new 中使用硬绑定函数，主要目的是预先设置函数的一些参数，这样在使用 new 进行初
+//	始化时就可以只传入其余的参数。 bind(..) 的功能之一就是可以把除了第一个参数（第一个参数用
+//	于绑定 this ）之外的其他参数都传给下层的函数（这种技术称为“部分应用”，是“柯里化”的一种）
+	
+		function foo(p1,p2) {
+			this.val = p1 + p2;
+		}
+		// 之所以使用null是因为在本例中我们并不关心硬绑定的this是什么
+		// 反正使用new时this会被修改
+		var bar = foo.bind( null, "p1" );
+		var baz = new bar( "p2" );
+		console.log(baz.val);// p1p2
+		 
+	</script>
+</html>

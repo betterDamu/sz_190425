@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>04_作用域_面试题</title>
+</head>
+<body>
+<script type="text/javascript">
+		(function(){
+			var a = 10;
+			function wrap(){
+				var a = 11;
+				function inner(){
+					var a = 12;
+					console.log(a);
+				}
+				inner();
+			}
+			wrap();
+		})()
+</script>
+</body>
+</html>

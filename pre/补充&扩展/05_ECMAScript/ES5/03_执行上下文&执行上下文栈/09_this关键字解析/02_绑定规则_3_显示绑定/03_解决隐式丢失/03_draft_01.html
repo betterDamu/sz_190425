@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+	一个最常见的 this 绑定问题就是被隐式绑定的函数会丢失绑定对象，也就是说它会应用默认绑定，
+	从而把 this 绑定到全局对象或者 undefined 上，取决于是否是严格模式。
+
+	参数传递其实就是一种隐式赋值，因此我们传入函数时也会被隐式赋值
+	
+	
+	如果把函数传入语言内置的函数而不是传入你自己声明的函数，结果是一样的，没有区别
+	JavaScript环境中内置的 setTimeout() 函数实现和下面的伪代码类似：
+	function setTimeout(fn,delay) {
+		// 等待delay毫秒
+		fn(); // <-- 调用位置！
+	}
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		function foo() {
+			console.log( this.a );
+		}
+		
+		var a = "oops, global"; // a是全局对象的属性
+		var obj = {
+			a: 2,
+			foo: foo
+		};
+		
+//		var bar = foo;
+//		bar();
+		
+		var bar = foo.bind(obj); //硬绑定
+		bar(); // "2"
+		window.bar();//2
+	</script>
+</html>

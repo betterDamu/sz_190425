@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var obj ={a:"a",b:"b",c:"c",d:"d"};
+    Object.prototype[Symbol.iterator]=function () {
+        var arr =[];
+        for(var item in obj){
+            arr.push(obj[item]);
+        }
+
+        var index =0;
+        return {
+            next () {
+                return  index < arr.length ? {value:arr[index++],done:false}:{value:undefined,done:true};
+            }
+        }
+    }
+
+    for(var item of obj){
+        console.log(item);
+    }
+</script>
+</html>

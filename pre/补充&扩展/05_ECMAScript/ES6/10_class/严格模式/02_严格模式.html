@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //函数运行在严格模式底下
+   "use strict"
+    var a="a";
+
+   eval("var a='b';console.log(a)");
+   console.log(a)
+
+    /*test();
+    function test() {
+        console.log("test");
+        arguments.callee();
+    }*/
+
+    console.log(Object.getOwnPropertyDescriptor(Object,"prototype"))
+    delete Object.prototype;
+
+</script>
+</html>

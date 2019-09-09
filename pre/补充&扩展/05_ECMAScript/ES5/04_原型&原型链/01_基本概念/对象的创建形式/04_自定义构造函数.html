@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*缺点:
+			3.占用的内存空间太大
+		
+		* 优化：
+		* 	代码冗余
+		* 	代码组织形式变好了
+		* 	具有类型 
+		* */
+		function Coder(age,name,wife,coding){
+			this.age=age;
+			this.name=name;
+			this.wife=wife;
+			this.coding=function(){
+				console.log(coding)
+			}
+		}
+		
+		var obj =  new Coder(18,"damu","zdy","very good");
+		var obj2 =  new Coder(58,"hsp","tg","very bad");
+	</script>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		document.write("test");
+		var altwrite = document.write;
+		
+//		三种方法解决
+		altwrite.bind(document)(" hello")
+		altwrite.call(document, " call")
+		altwrite.apply(document, [" apply"])
+	</script>
+</html>

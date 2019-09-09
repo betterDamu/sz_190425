@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    class Father {
+        constructor(name,age) {
+            this.name=name;
+            this.age = age;
+        }
+        //静态方法可以被继承
+        static DAMU(){
+           console.log("damu");
+        }
+    }
+
+    class Son extends Father{
+        //不写默认有
+        /*constructor(){
+            super() //一定要顶行  先等父类的构造器调完才能实例化子类
+        }*/
+    }
+    var son = new Son();
+    console.log(Son,son);
+    Father.DAMU();
+    Son.DAMU();
+</script>
+</html>

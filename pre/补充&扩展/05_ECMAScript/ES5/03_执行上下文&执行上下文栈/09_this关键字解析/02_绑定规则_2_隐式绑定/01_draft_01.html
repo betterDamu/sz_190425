@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+	隐式绑定的规则是调用位置是否有上下文对象，或者说是否被某个对象拥有或者包含
+	当函数引用有上下文对象时，隐式绑定规则会把函数调用中的 this 绑定到这个上下文对象
+	
+	对象属性引用链中只有最顶层或者说最后一层会影响调用位置
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+//	隐式绑定的规则是调用位置是否有上下文对象，或者说是否被某个对象拥有或者包含
+//	当函数引用有上下文对象时，隐式绑定规则会把函数调用中的 this 绑定到这个上下文对象
+
+		function foo() {
+			console.log( this.a );
+		}
+		var obj = {
+			a: 2,
+			foo: foo
+		};
+		obj.foo(); 
+		
+	</script>
+</html>

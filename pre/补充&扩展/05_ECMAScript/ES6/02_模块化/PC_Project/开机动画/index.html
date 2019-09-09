@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PC项目</title>
+    <!--使用最高级标准模式渲染页面, 用于IE浏览器-->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <!--采用webkit内核渲染， 用于国产双内核浏览器-->
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <!--总体的包裹元素-->
+    <div id="wrapper">
+        <!--开机动画-->
+        <div id="bootMask">
+            <div class="boot-mask-up"></div>
+            <div class="boot-mask-down"></div>
+            <div class="boot-progress"></div>
+        </div>
+
+        <!--头部-->
+        <header id="header">
+            <div class="container clearfix">
+                <h1 class="logo fl">
+                    <img src="img/logo.png" alt="logo">
+                </h1>
+                <div class="music fl">
+                    <audio src="img/audio.mp3" id="audio"></audio>
+                </div>
+                <nav class="nav-list fr">
+                    <ul>
+                        <li class="nav-item">
+                            <a href="javascript:">
+                                <div class="nav-item-default">
+                                    <img src="img/home.png" alt="">
+                                </div>
+                                <div class="nav-item-actived">
+                                    <img src="img/home_actived.png" alt="">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:">
+                                <div class="nav-item-default">课程</div>
+                                <div class="nav-item-actived">课程</div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:">
+                                <div class="nav-item-default">工作</div>
+                                <div class="nav-item-actived">工作</div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:">
+                                <div class="nav-item-default">关于</div>
+                                <div class="nav-item-actived">关于</div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:">
+                                <div class="nav-item-default">团队</div>
+                                <div class="nav-item-actived">团队</div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!--小三角-->
+            <div class="arrow"></div>
+        </header>
+
+        <!--主体内容-->
+        <div id="main">
+            <nav class="menu-list">
+                <span class="menu-item"></span>
+                <span class="menu-item"></span>
+                <span class="menu-item"></span>
+                <span class="menu-item"></span>
+                <span class="menu-item"></span>
+            </nav>
+            <div class="content-list">
+                <div class="content-item home">
+                    <div class="content-inner">
+                        <div class="play-wrapper">
+                            <div class="play-list">
+                                <div class="play-item active">
+                                    <h2>First Page</h2>
+                                </div>
+                                <div class="play-item">
+                                    <h2>Second Page</h2>
+                                </div>
+                                <div class="play-item">
+                                    <h2>Third Page</h2>
+                                </div>
+                                <div class="play-item">
+                                    <h2>Fourth Page</h2>
+                                </div>
+                            </div>
+                            <div class="icon-list">
+                                <span class="icon-item active"></span>
+                                <span class="icon-item"></span>
+                                <span class="icon-item"></span>
+                                <span class="icon-item"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-item course">
+                    <div class="content-inner">
+                        <div class="plane1"></div>
+                        <div class="plane2"></div>
+                        <div class="plane3"></div>
+                        <div class="course1">
+                            <h3 class="common-title">EINIGE</h3>
+                            <h3 class="common-title">UNSERER</h3>
+                            <h3 class="common-title">KUNDEN</h3>
+                        </div>
+                        <div class="course2">
+                            <p class="common-text">Das Kundenvertrauen in unsere Kompetenz ist die notwendige Basis einer erfolgreichen Zusammenarbeit, gleichzeitig aber auch das größte Lob, das man uns entgegenbringen kann.</p>
+                            <p class="common-text">Diese und viele weitere große und kleine Kunden vertrauen uns seit Jahren, was uns stolz macht, und dafür sagen wir an dieser Stelle einfach mal.</p>
+                        </div>
+                        <div class="course3">
+                            <div class="plus"></div>
+                            <div class="plus"></div>
+                            <div class="plus"></div>
+                            <div class="plus"></div>
+                            <div class="plus"></div>
+                            <ul class="course3-list clearfix">
+                                <li class="course3-item">
+                                    <div class="course3-item-inner">
+                                        <div class="front">
+                                            <img src="img/html5.png" alt="html5">
+                                        </div>
+                                        <div class="back">
+                                            HTML5
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="course3-item">
+                                    <div class="course3-item-inner">
+                                        <div class="front">
+                                            <img src="img/java.png">
+                                        </div>
+                                        <div class="back">Java</div>
+                                    </div>
+                                </li>
+                                <li class="course3-item">
+                                    <div class="course3-item-inner">
+                                        <div class="front">
+                                            <img src="img/python.png">
+                                        </div>
+                                        <div class="back">Python</div>
+                                    </div>
+                                </li>
+                                <li class="course3-item">
+                                    <div class="course3-item-inner">
+                                        <div class="front">
+                                            <img src="img/php.png">
+                                        </div>
+                                        <div class="back">PHP</div>
+                                    </div>
+                                </li>
+                                <li class="course3-item">
+                                    <div class="course3-item-inner">
+                                        <div class="front">
+                                            <img src="img/ios.png">
+                                        </div>
+                                        <div class="back">IOS</div>
+                                    </div>
+                                </li>
+                                <li class="course3-item">
+                                    <div class="course3-item-inner">
+                                        <div class="front">
+                                            <img src="img/java.png">
+                                        </div>
+                                        <div class="back">Java</div>
+                                    </div>
+                                </li>
+                                <li class="course3-item">
+                                    <div class="course3-item-inner">
+                                        <div class="front">
+                                            <img src="img/python.png">
+                                        </div>
+                                        <div class="back">Python</div>
+                                    </div>
+                                </li>
+                                <li class="course3-item">
+                                    <div class="course3-item-inner">
+                                        <div class="front">
+                                            <img src="img/php.png">
+                                        </div>
+                                        <div class="back">PHP</div>
+                                    </div>
+                                </li>
+                                <li class="course3-item">
+                                    <div class="course3-item-inner">
+                                        <div class="front">
+                                            <img src="img/html5.png" alt="html5">
+                                        </div>
+                                        <div class="back">
+                                            HTML5
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="course3-item">
+                                    <div class="course3-item-inner">
+                                        <div class="front">
+                                            <img src="img/java.png">
+                                        </div>
+                                        <div class="back">Java</div>
+                                    </div>
+                                </li>
+                                <li class="course3-item">
+                                    <div class="course3-item-inner">
+                                        <div class="front">
+                                            <img src="img/python.png">
+                                        </div>
+                                        <div class="back">Python</div>
+                                    </div>
+                                </li>
+                                <li class="course3-item">
+                                    <div class="course3-item-inner">
+                                        <div class="front">
+                                            <img src="img/php.png">
+                                        </div>
+                                        <div class="back">PHP</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-item works">
+                    <div class="content-inner">
+                        <div class="pencel1"></div>
+                        <div class="pencel2"></div>
+                        <div class="pencel3"></div>
+
+                        <div class="works1">
+                            <h3 class="common-title">EINBLICK</h3>
+                            <h3 class="common-title">ERKENNTNIS</h3>
+                            <h3 class="common-title">ERGEBNIS</h3>
+                        </div>
+                        <div class="works2">
+                            <ul class="works-list">
+                                <li class="works-item">
+                                    <img src="img/worksimg1.jpg">
+                                    <div class="mask">
+                                        <p>一江春水向东流</p>
+                                        <div class="mask-icon"></div>
+                                    </div>
+                                </li>
+                                <li class="works-item">
+                                    <img src="img/worksimg2.jpg">
+                                    <div class="mask">
+                                        <p>一江春水向东流</p>
+                                        <div class="mask-icon"></div>
+                                    </div>
+                                </li>
+                                <li class="works-item">
+                                    <img src="img/worksimg3.jpg">
+                                    <div class="mask">
+                                        <p>一江春水向东流</p>
+                                        <div class="mask-icon"></div>
+                                    </div>
+                                </li>
+                                <li class="works-item">
+                                    <img src="img/worksimg4.jpg">
+                                    <div class="mask">
+                                        <p>一江春水向东流</p>
+                                        <div class="mask-icon"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="works3">
+                            <div class="robot"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-item about">
+                    <div class="content-inner">
+                        <div class="about1">
+                            <h3 class="common-title">EINBLICK</h3>
+                            <h3 class="common-title">ERKENNTNIS</h3>
+                            <h3 class="common-title">ERGEBNIS</h3>
+                        </div>
+                        <div class="about2">
+                            <p class="common-text">
+                                Der bunte Medienmix ist die Faszination die uns antreibt und das, was man an uns schätzt. Von A bis Z und von vorne bis hinten nehmen wir Ihr Projekt unter unsere Fittiche und lassen es zu etwas Großartigem heranwachsen.
+                            </p>
+                        </div>
+                        <div class="about3">
+                            <div class="about3-item">
+                                <img src="img/about2.jpg">
+                                <div class="about3-item-mask">
+                                    <ul>
+                                        <li><img src="img/about1.jpg"></li>
+                                        <li><img src="img/about1.jpg"></li>
+                                        <li><img src="img/about1.jpg"></li>
+                                        <li><img src="img/about1.jpg"></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="about3-item">
+                                <img src="img/about4.jpg">
+                                <div class="about3-item-mask">
+                                    <ul>
+                                        <li><img src="img/about3.jpg"></li>
+                                        <li><img src="img/about3.jpg"></li>
+                                        <li><img src="img/about3.jpg"></li>
+                                        <li><img src="img/about3.jpg"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="content-item team">
+                    <div class="content-inner">
+                        <div class="team1">
+                            <h3 class="common-title">WIR SIND</h3>
+                            <h3 class="common-title">VOXELAIR</h3>
+                        </div>
+                        <div class="team2">
+                            <p class="common-text">Wir sind seit 2002 eine Full-Service-Werbeagentur mit Stammsitz in Heimsheim, zwischen Stuttgart und Karlsruhe.</p>
+                            <p class="common-text">Über 60 Jahre Erfahrung vereinen das gesamte VoxelAir-Team. Dabei hat jedes Voxel neben professionellem Allroundwissen auch sein ganz spezielles Gebiet, um selbst die individuellsten Kundenwünsche schnell und kompetent umzusetzen.
+                            </p>
+                        </div>
+                        <div class="team3">
+                            <ul>
+                                <li class="team3-item"></li>
+                                <li class="team3-item"></li>
+                                <li class="team3-item"></li>
+                                <li class="team3-item"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--导入js文件-->
+    <script src="js/sea.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

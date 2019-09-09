@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var obj={
+			
+		}
+		
+		Object.defineProperty(obj,"a",{
+			get:function(){
+				console.log(this)
+				return this._a_;
+			},
+			set:function(val){
+				console.log(this)
+				this._a_ = val;
+			}
+		})
+		
+		obj.a=4;
+		console.log(obj.a);
+		
+		
+//		var result =Object.getOwnPropertyDescriptor(obj,"a");
+//		console.log(result);
+	</script>
+</html>

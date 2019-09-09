@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		function test(arr,fn){
+			arr =arr||Array.prototype;
+			fn =fn||Function.prototype;
+
+			/*arr=arr||[];
+			fn = fn||function(){};*/
+
+			return arr.map(fn);
+		}
+		console.log(test());
+		
+	</script>
+</html>

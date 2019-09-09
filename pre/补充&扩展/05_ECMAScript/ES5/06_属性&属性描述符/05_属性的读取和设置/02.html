@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+//	如果属性不直接存在于对象中也不在原型链上
+		console.log(Object.prototype)
+		var obj={}
+		obj.a="a";
+		console.log(obj.a)
+		
+		var result =Object.getOwnPropertyDescriptor(obj,"a");
+		console.log(result);
+	</script>
+</html>

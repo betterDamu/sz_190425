@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+//	硬绑定的典型应用场景就是创建一个包裹函数，传入所有的参数并返回接收到的所有值
+	function foo(arg1,arg2) {
+		console.log( this.a,arg1,arg2);
+		return this.a + arg1;
+	}
+	var obj = {
+		a:2
+	};
+	var bar = function() {
+		return foo.apply( obj, arguments);
+	};
+	
+	
+	var b = bar(3,2); // 2 3 2
+	console.log( b ); // 5
+	</script>
+</html>

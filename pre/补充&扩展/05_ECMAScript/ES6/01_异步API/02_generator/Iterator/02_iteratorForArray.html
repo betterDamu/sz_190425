@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var arr =["a","b","c","d"];
+    function iteratorArr() {
+        let index =0;
+        return {
+            next () {
+                return  index < this.length ? {value:this[index++]+"damu",done:false}:{value:undefined,done:true};
+            }
+        }
+    }
+
+
+    var iterator = iteratorArr(arr);
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+
+</script>
+</html>

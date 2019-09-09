@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//正常数组
+		var a=Array.apply(null,{length:3});
+		console.log(a);
+		a.map(function(v,i){console.log(i)})
+		
+		//稀疏数组
+		var b=new Array(3);
+		console.log(b);
+		b.map(function(v,i){console.log(i)})
+		
+		
+		
+	</script>
+</html>

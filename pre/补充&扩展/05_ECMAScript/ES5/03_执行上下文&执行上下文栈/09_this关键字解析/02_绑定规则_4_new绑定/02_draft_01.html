@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+//	我们重新定义一下JavaScript中的“构造函数”。JavaScript，构造函数只是一些使用 new 操作符时被调用的函数。
+//	它们并不会属于某个类，也不会实例化一个类。实际上，它们甚至都不能说是一种特殊的函数类型，它们只是被 new 操作符调用的普通函数而已。
+
+
+//	!!!!!实际上并不存在所谓的“构造函数”，只有对于函数的“构造调用”
+
+//	使用 new 来调用函数，或者说发生构造函数调用时，对于我们的this来说。
+//		3. 这个新对象会绑定到函数调用的 this 。
+
+		function foo(a) {
+			this.a = a;
+		}
+		var bar = new foo(2);
+		console.log( bar.a ); // 2
+		
+//使用 new 来调用 foo(..) 时，我们会构造一个新对象并把它绑定到 foo(..) 调用中的 this 上。 new 是最
+//后一种可以影响函数调用时 this 绑定行为的方法，我们称之为 new 绑定。		
+	</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var obj={
+			name:"snw"
+		};
+		Object.defineProperty(obj,"age",{
+			value:18,
+			writable:true,
+			configurable:true,
+			enumerable:true
+		});
+		console.log(obj); //Object {name: "snw", age: 18}
+		console.log(obj.age);//18
+		
+		
+		Object.defineProperty(obj,"sex",{
+			value:"man"
+		})
+		var result =Object.getOwnPropertyDescriptor(obj,"sex");
+		console.log(result);//默认值都是false
+	</script>
+</html>

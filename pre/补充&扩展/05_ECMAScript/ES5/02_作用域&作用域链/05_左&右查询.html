@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//右查询：在变量所在的作用域链中找不到声明，浏览器引擎会抛出ReferenceError: a is not defined
+		//ReferenceError: a is not defined
+		
+		/*(function(){
+			function test(){
+				console.log(a);
+			}
+			test();
+		})();*/
+		
+		//本质上25行的test调用时，对test要进行一次右查询的
+		(function(){
+			/*function test(){
+				console.log(a);
+			}*/
+			test();
+		})();
+	</script>
+</html>

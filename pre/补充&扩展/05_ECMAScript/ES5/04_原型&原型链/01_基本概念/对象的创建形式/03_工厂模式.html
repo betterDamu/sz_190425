@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*缺点:
+			2.没有类型 都是Object
+			3.占用的内存空间太大
+		
+		* 优化：
+		* 	代码冗余
+		* 	代码组织形式变好了
+		* */
+		function creatCoder(age,name,wife,coding){
+			var obj ={
+				age:age,
+				name:name,
+				wife:wife,
+				coding:function(){
+					console.log(coding)
+				}
+			}
+			
+			return obj;
+		}
+		
+		var obj =  creatCoder(18,"damu","zdy","very good");
+		var obj2 = creatCoder(58,"hsp","tg","very bad");
+		
+		console.log(obj,obj2);
+	</script>
+</html>

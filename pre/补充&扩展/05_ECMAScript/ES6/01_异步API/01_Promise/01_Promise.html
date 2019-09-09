@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promise对象</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+
+    var promise = new Promise(function (reslove,reject) {
+        setTimeout(function (flag) {
+           if(flag){
+               console.log("success-1")
+               reslove();
+           }else{
+               console.log("error-1");
+               reject();
+               return;
+           }
+        },1000,false)
+    });
+
+    promise
+        .then(function () {
+            return new Promise(function (reslove,reject) {
+                setTimeout(function (flag) {
+                    if(flag){
+                        console.log("success-2");
+                        reslove();
+                    }else{
+                        console.log("error-2");
+                        reject();
+                        return;
+                    }
+                },1000,true)
+            });
+        })
+        .then(function () {
+            setTimeout(function (flag) {
+                if(flag){
+                    console.log("success-3");
+                }else{
+                    console.log("error-3");
+                    return;
+                }
+            },1000,true)
+        })
+
+</script>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    class Father {
+        constructor(name,age) {
+            this.name=name;
+            this.age = age;
+        }
+        //静态方法可以被继承
+        static DAMU(){
+           console.log("damu");
+        }
+        toString(){
+            console.log("toString");
+        }
+        
+        get prop(){
+        	return "prop";
+        }
+    }
+
+    class Son extends Father {
+        constructor(name,age, wife) {
+            super(name, age);
+            this.wife = wife;
+        }
+        static DAMU(){
+            super.DAMU();
+            console.log("son-damu");
+        }
+        toString() {
+             super.toString();
+             console.log("son-toString")
+        }
+    }
+
+	let father = new Father("达姆-f",18)
+    let son = new Son("达姆",18,"周冬雨");
+    console.log(son);
+    Son.DAMU();
+    son.toString();
+
+    console.log(Object.getPrototypeOf(Son) === Father)
+    
+    console.log(son.prop,father.prop)
+</script>
+</html>

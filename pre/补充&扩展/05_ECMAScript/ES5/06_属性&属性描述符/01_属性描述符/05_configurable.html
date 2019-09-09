@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+//1. 只有显示通过.来添加的属性 或 隐式(不用var定义的变量)的才可以delete(window的属性)
+//2. 不通过.的方式给一般对象或上下文对象添加的属性, 都不可以delete
+//		都是默认不可配置的
+		  var a = 2;
+		  var a = function () {
+		      
+		  };
+		  function a() {
+		      
+		  }
+		  delete a;
+		  console.log(a);
+		    
+		    
+		    
+		//默认可配置
+		//  c = 3;
+		//  delete c;
+		//  console.log(c);
+		
+		//  window.c = 'abc';
+		//  delete c;
+		//  console.log(c);
+		
+		
+		//默认可配置
+		//var obj={
+		//	a:"a",
+		//}
+		//delete obj.a;
+		//console.log(obj.a);
+		
+		//obj.b="b";
+		//delete obj.b;
+		//console.log(obj.b);
+		
+		
+	</script>
+</html>

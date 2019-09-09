@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+   // Symbol 作为属性名，该属性不会出现在for...in、for...of循环中
+    let obj ={
+        name:"damu",
+        age:18
+    };
+    let symbol = Symbol("a");
+    obj[symbol] ="a";
+
+    console.log(obj)
+    for(item in obj){
+        console.log(item)
+    }
+</script>
+</html>

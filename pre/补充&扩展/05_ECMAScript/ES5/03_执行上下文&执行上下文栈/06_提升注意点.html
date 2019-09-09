@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		console.log(a);//undefined
+		console.log(b);//undefined
+		if(true){
+			var a=0;
+		}else{
+			var b=2;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+//最佳实践：在代码块去不要去定义函数
+//		test();
+		console.log(test)//undefined
+		if(true){
+//			var test =function (){
+//				console.log("if");
+//			}
+			function test (){
+				console.log("if");
+			}
+		
+		}else{
+			/*var test =function (){
+				console.log("eles");
+			}*/
+			function test (){
+				console.log("else");
+			}
+		}
+		console.log(test)//函数
+		
+		
+		
+		
+	</script>
+</html>

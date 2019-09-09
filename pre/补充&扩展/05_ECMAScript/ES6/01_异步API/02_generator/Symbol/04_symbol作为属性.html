@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var obj ={
+        name:"damu",
+        age:18,
+        [symbol()]:function () {
+            console.log("function")
+        }
+    };
+    var symbol = Symbol("a");
+    var symbol2 = Symbol("b");
+    obj[symbol] ="a";
+    obj[symbol2] ="b";
+
+   var arr =  Object.getOwnPropertyNames(obj);
+    console.log(arr);
+
+    var arr2 =  Object.getOwnPropertySymbols(obj);
+    console.log(arr2);
+
+    //如何去拿symbol属性所对应的属性值
+    arr2.map(function (item) {
+        console.log(obj[item])
+    });
+
+    console.log(obj[symbol])
+</script>
+</html>

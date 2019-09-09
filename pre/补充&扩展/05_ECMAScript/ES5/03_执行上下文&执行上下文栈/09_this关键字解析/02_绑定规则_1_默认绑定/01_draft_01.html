@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+	独立函数调用。可以把这条规则看作是无法应用其他规则时的默认规则
+		独立函数调用,如果使用了非严格模式,this 会绑定到全局对象(window)
+		独立函数调用,如果使用严格模式（ strict mode ），this 会绑定到 undefine
+	
+	这里有一个微妙但是非常重要的细节，虽然 this 的绑定规则完全取决于调用位置，
+	但是只有 foo()运行在非 strict mode 下时，默认绑定才能绑定到全局对象；
+	严格模式下调用foo()不会影响默认绑定规则
+	
+		无论函数是在哪个作用域中被调用,只要是独立调用则就会按默认绑定规则被绑定到全局对象或者undefined上
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+//	独立函数调用,如果使用了非严格模式,this 会绑定到全局对象（window）
+		//函数运行在严格模式中
+		/*
+		 * function foo() {
+			"use strict";
+			console.log( this.a );
+		}
+		var a = 2;
+		foo();*/
+		
+		//函数运行在严格模式中
+		/*"use strict";
+		function foo() {
+			console.log( this.a );
+		}
+		var a = 2;
+		foo();*/
+		
+		
+		// 在严格模式下进行函数调用
+		var a = 2;
+		function foo() {
+			console.log( this.a );
+		}
+		(function(){
+			"use strict";
+			foo();
+		})()
+	</script>
+</html>

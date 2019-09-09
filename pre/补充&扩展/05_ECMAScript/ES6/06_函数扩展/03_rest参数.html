@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    function test(...arg) {
+        console.log(arg, arg instanceof Array)
+    }
+    test(1,2,3,4,5);
+
+    console.log(...[1,2,3]);
+
+
+    let [a,b,...c] = [1,2,3,4,5,6];
+    console.log(a,b,c);
+
+
+    let {e,f,...g} = {e:"e",f:"f",g:"g",h:"h"}
+    console.log(e,f,g);
+
+</script>
+</html>

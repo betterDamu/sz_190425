@@ -1,0 +1,1 @@
+browserify taiUi/tai.js -o dist/tai.js

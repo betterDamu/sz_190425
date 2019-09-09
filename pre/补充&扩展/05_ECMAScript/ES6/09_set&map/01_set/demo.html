@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+        const arr = ["a","b","c","d",NaN];
+        let set = new Set(arr);
+        console.log(set[1]);
+    */
+
+    //增
+    let set = new Set();
+    set.add("a");
+    set.add("b");
+    set.add("c");
+    set.add("d");
+    set.add("e");
+    console.log(set["a"])
+
+
+    //删
+    //set.delete("c");
+    //set.clear();
+    //console.log(set,set.size,set.has("hhh"));
+
+
+
+    //查
+    set.forEach((item,index,val)=>{
+        console.log(item);
+        return 1;
+    })
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var a =1;
+		function wrap(){
+			var a = 2;
+			console.log(a);
+			function inner(){
+				var a =3;
+				console.log(a);
+			}
+			inner();
+		}
+		wrap();
+		console.log(a);
+	</script>
+</html>

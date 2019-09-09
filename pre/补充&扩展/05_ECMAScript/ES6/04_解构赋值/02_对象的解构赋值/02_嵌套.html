@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		let obj = {
+			  		p: [
+			   		 	'Hello',
+			    	 	{ y: 'World' }
+			 		]
+				  };
+				
+		let { p: [x, { y }] } = obj;
+		console.log(x,y);
+		
+		let [a,[b]] = [1,[2]];
+		console.log(a,b);
+	</script>
+</html>

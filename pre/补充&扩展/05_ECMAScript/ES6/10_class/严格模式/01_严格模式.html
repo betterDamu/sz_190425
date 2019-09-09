@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //函数运行在严格模式底下
+   /*
+       "use strict"
+       function testStrict() {
+            console.log(this)
+       }
+       testStrict();
+   */
+
+
+   //函数在严格模式底下被调用
+   function testStrict() {
+       console.log(this);
+   }
+
+   (function () {
+       "use strict"
+       testStrict();
+   })()
+</script>
+</html>

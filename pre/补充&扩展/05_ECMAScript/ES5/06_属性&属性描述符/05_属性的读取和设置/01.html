@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+//	如果属性直接存在于对象中　不在原型链上
+		console.log(Object.prototype)
+		
+
+//		-数据描述符(没有setter/getter)
+//			直接修改对象中的属性(注意writbale的值)
+		var obj={
+			a:"a"
+		}
+		
+		Object.defineProperty(obj,"a",{
+			writable:false
+		})
+		
+		obj.a="b";
+		console.log(obj.a)
+		
+//	-访问描述符
+//			直接调用set方法
+		var obj2={
+			a:"a"
+		}
+		
+		Object.defineProperty(obj2,"a",{
+			get :function(){
+				return this._a_;
+			},
+			set :function(val){
+				this._a_ = val;
+			}
+		})
+		
+		obj2.a="b";
+		console.log(obj2.a)
+	</script>
+</html>

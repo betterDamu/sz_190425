@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+	我们不想在对象内部包含函数引用，而想在某个对象上强制调用函数
+	具体点说，可以使用函数的 call(..) 和 apply(..) 方法来实现显示绑定
+	
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		//普通对象的属性查找 
+		function foo(a,b) {
+			console.log( this.a,a,b );//装箱
+		}
+		var obj = {
+			a:2
+		};
+//		foo.call( obj,"a","b"); 
+		foo.apply(obj,["a","b"])
+
+
+	</script>
+</html>
