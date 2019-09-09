@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    "use strict"
+    var obj ={
+       name:"damu",
+       age:18,
+       son:{
+           name:"hh"
+       }
+    }
+
+    // js中所有的方法都是浅不变形的 他们只能影响对象的直接属性 没有办法影响到深层属性 也没有办法上原型链
+    Object.freeze(obj)
+    obj.son = {}
+
+    console.log(obj)
+
+</script>
+</html>

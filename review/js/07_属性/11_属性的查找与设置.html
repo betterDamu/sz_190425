@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+        1. obj.a
+            如果对象的直接属性中有a属性 则使用这个属性 如果没有则上原型链
+        2. obj.a = "a"
+            只会影响对象的直接属性
+    */
+
+
+   /*
+   [[Put]]：代表的属性设置的算法
+
+    obj.a="a";
+    [[put]]：
+    1.如果属性直接存在于对象中　不在原型链上
+        找到直接存在于对象中的属性
+            -数据描述符(没有setter/getter)
+                直接修改对象中的属性(注意writbale的值)
+            -访问描述符
+                直接调用set方法
+
+    2.如果属性不直接存在于对象中也不在原型链上
+        在对象的直接属性中添加一个属性（数据描述符）
+                value:"a"
+                writable:true
+                configurable:true
+                enumerable:true
+
+     4.如果属性直接存在于对象中  也在原型链上
+        找到直接存在于对象中的属性
+            -数据描述符(没有setter/getter)
+                直接修改对象中的属性(注意writbale的值)
+            -访问描述符
+                直接调用set方法
+
+
+
+    3.如果属性不直接存在于对象中  在原型链上
+         ①.该属性是数据描述符(没有setter/getter)
+            -writbale为true
+                直接在对象中添加一个属性，我们称之为屏蔽属性
+            -writbale为false
+                 报错，不会生成屏蔽属性
+           ②.该属性是访问描述符
+                调用set，不会生成屏蔽属性
+   */
+   var obj = {};
+   Object.defineProperty(Object.prototype,"a",{
+      get(){},
+      set(val){}
+   })
+
+    obj.a = "a";
+   console.log(obj)
+</script>
+</html>

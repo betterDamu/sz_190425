@@ -8,9 +8,14 @@
 
 </body>
 <script>
-    var obj={}
+    var obj={
+        a:"a"
+    }
     Object.defineProperty(obj,"test",{})
-    console.log(Object.getOwnPropertyDescriptor(obj,"test"))
+    Object.defineProperty(obj,"a",{
+        writable:false
+    })
+    console.log(Object.getOwnPropertyDescriptor(obj,"a"))
 
 
     /*

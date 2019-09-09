@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    "use strict"
+    var obj ={}
+    Object.defineProperty(obj,"test",{
+        value:"test",
+        writable:false,
+        configurable:false,
+        enumerable:true
+    })
+    obj.test2 ="test2"
+    Object.preventExtensions(obj);
+    obj.a="a"
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var obj = {}
+    Object.defineProperty(obj,"test",{
+        writable:true,
+        value:"佳兴醒醒",
+        enumerable:true,
+        configurable:false
+    })
+
+    Object.defineProperty(obj,"test",{
+        value:"佳兴醒醒2",
+    })
+</script>
+</html>
