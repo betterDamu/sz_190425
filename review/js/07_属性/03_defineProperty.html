@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var obj={}
+    Object.defineProperty(obj,"test",{})
+    console.log(Object.getOwnPropertyDescriptor(obj,"test"))
+
+
+    /*
+    1. 字面量 {a:"a"}
+    2. 隐式形式 obj.a ="a"
+        属性描述符都是true
+    3. defineProperty
+        属性描述符是false
+
+    window的属性
+        var a = a   属性描述符都是true除了configurable为false
+        b = b        属性描述符都是true
+    */
+</script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var a = "a";
+    b = "b";
+    console.log(Object.getOwnPropertyDescriptor(window,"a"))
+    console.log(Object.getOwnPropertyDescriptor(window,"b"))
+
+    delete a;
+    delete b;
+    console.log(a)
+    console.log(b)
+</script>
+</html>

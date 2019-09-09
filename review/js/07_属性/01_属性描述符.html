@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var obj = {
+        name:"达姆"
+    }
+    obj.age =18;
+    var nameRes = Object.getOwnPropertyDescriptor(obj,"name")
+    var ageRes = Object.getOwnPropertyDescriptor(obj,"age")
+    console.log(nameRes,ageRes);
+
+
+
+    /*
+        configurable: true   //控制属性能否被重新配置或删除
+        enumerable: true     //控制属性是否可枚举(能否出现在对象的for in循环中)
+
+        value: "达姆"       //控制了属性的课读写权限
+        writable: true
+    */
+
+    /*obj.name = "周冬雨老公";
+    console.log(obj)
+    for(item in obj){
+        console.log(item)
+    }
+    delete obj.name
+    console.log(obj)*/
+</script>
+</html>
