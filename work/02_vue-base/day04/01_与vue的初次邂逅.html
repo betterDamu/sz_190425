@@ -15,7 +15,7 @@
         高阶函数: 函数可以作为参数传给另外一个函数  函数可以作为另外一个函数的返回值
         函数化编程  异步编程
 -->
-<script src="./js/vue.min.js"></script>
+<script src="./js/vue.js"></script>
 <script>
     //vue的声明式编程
     //vue的响应式数据（单向数据流）
@@ -32,7 +32,8 @@
         }
     })
 
-    console.log(vm.msg);
+    vm.msg2 = "msg2"
+    /*console.log(vm.msg);
     setTimeout(()=>{
         vm.msg = "byebye vue"
     },2000)
@@ -40,7 +41,7 @@
     vm.msg2 ="xxx";
     setTimeout(()=>{
         vm.msg2 = "xxx lalala";
-    },4000)
+    },4000)*/
 
 </script>
 </html>

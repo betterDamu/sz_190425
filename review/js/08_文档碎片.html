@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul id="app">
+        <li>damu</li>
+        <li>lph</li>
+        <li>jj</li>
+        <li>xfz</li>
+    </ul>
+</body>
+<script>
+    window.onload=function () {
+        var appNode = document.querySelector("#app");
+        var fragment = document.createDocumentFragment();
+        var child = null;
+
+        while (child = appNode.firstChild){
+            fragment.appendChild(child) // child如果存在于文档树中 则当前appendChild是一个剪切操作
+        }
+
+        //不会触发重绘重排
+        var liNodes = Array.from(fragment.children);
+        liNodes.forEach((liNode)=>{
+            liNode.innerHTML += "-atguigu";
+        })
+
+        appNode.appendChild(fragment)
+    }
+
+</script>
+</html>
