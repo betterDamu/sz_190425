@@ -14,9 +14,8 @@ Observer.prototype = {
         this.defineReactive(this.data, key, val);
     },
     defineReactive: function(data, key, val) {
-        //每一个data中的属性（包括深层次属性都一个dep闭包）
-        var dep = new Dep();
-        var childObj = observe(val);
+        var dep = new Dep();  // 每一个data中的属性 都对应了一个dep闭包
+        var childObj = observe(val); // 这个递归就是来做深度遍历的!!!
 
 
         //真正的数据劫持的代码

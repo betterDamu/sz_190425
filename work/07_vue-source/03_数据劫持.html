@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+    </div>
+</body>
+<script src="MVVM/mvvm.js"></script>
+<script src="MVVM/observer.js"></script>
+<script src="MVVM/compile.js"></script>
+<script src="MVVM/watcher.js"></script>
+<script>
+    /*
+        数据劫持
+            将data中的属性 从数据描述符 转为 访问描述符 (深度劫持)
+
+        dep的分配顺序:
+                damu damuname damuage son  sonname sonage wife wifename  wifeage a b
+        数据劫持的顺序
+                damuname  damuage   sonname   sonage  wifename   wifeage wife son  damu a b
+
+    */
+
+    var vm = new MVVM({
+        el:"#app",
+        data:{
+            damu:{
+                damuname:"达姆",
+                damuage:18,
+                son:{
+                    sonname:"李花花",
+                    sonage:48,
+                    wife:{
+                        wifename:"凤姐",
+                        wifeage:50
+                    }
+                }
+            },
+            a:"a",
+            b:"b"
+        }
+    })
+</script>
+</html>
