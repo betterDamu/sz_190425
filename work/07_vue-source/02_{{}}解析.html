@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+    </div>
+</body>
+<script src="MVVM/mvvm.js"></script>
+<script src="MVVM/observer.js"></script>
+<script src="MVVM/compile.js"></script>
+<script src="MVVM/watcher.js"></script>
+<script>
+    /*
+        模板解析
+            1. 找到对应的挂载节点 将挂载节点下的所有子节点统一剪切到一个文档碎片中
+            2. 解析文档碎片
+            3. 将解析完的文档碎片挂回到挂载节点下
+    */
+
+    var vm = new MVVM({
+        el:"#app",
+        data:{
+            msg:"vue 数据双向绑定"
+        }
+    })
+</script>
+</html>

@@ -99,6 +99,11 @@ Compile.prototype = {
 
 // 指令处理集合
 var compileUtil = {
+    /*
+        node : 当前被解析的节点
+        vm : 当前的vm实例对象
+        exp: 当前指令对应的表达式
+    */
     text: function(node, vm, exp) {
         this.bind(node, vm, exp, 'text');
     },
@@ -132,6 +137,7 @@ var compileUtil = {
 
         updaterFn && updaterFn(node, this._getVMVal(vm, exp));
 
+        // 响应式!!!!
         new Watcher(vm, exp, function(value, oldValue) {
             updaterFn && updaterFn(node, value, oldValue);
         });
@@ -147,6 +153,7 @@ var compileUtil = {
         }
     },
 
+    // 根据表达式 去 data中对应的值!
     _getVMVal: function(vm, exp) {
         var val = vm._data;
         exp = exp.split('.');
@@ -170,7 +177,6 @@ var compileUtil = {
         });
     }
 };
-
 
 var updater = {
     textUpdater: function(node, value) {

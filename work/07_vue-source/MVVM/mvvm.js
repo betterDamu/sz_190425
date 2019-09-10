@@ -20,7 +20,10 @@ function MVVM(options) {
     //数据劫持
     observe(data, this);
 
-    //指令解析
+    /*
+     指令解析
+        options.el || document.body :   options.el?options.el:document.body
+    */
     this.$compile = new Compile(options.el || document.body, this)
 }
 
