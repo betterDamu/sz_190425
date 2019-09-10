@@ -65,6 +65,8 @@ Dep.prototype = {
     },
 
     depend: function() {
+        // Dep.target 是一个对应指令的watcher
+        // this :  对应表达式的dep
         Dep.target.addDep(this);
     },
 

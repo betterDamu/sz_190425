@@ -2,7 +2,7 @@ function Watcher(vm, exp, cb) {
     this.cb = cb;
     this.vm = vm;
     this.exp = exp;
-    this.depIds = {};
+    this.depIds = {}; // 一个watcher 存放的dep的对象
     this.value = this.get();
 }
 
@@ -19,6 +19,8 @@ Watcher.prototype = {
         }
     },
     addDep: function(dep) {
+        // this  : 对应指令的watcher
+        // dep  : 对应的表达式的dep
         if (!this.depIds.hasOwnProperty(dep.id)) {
             dep.addSub(this);
             this.depIds[dep.id] = dep;
