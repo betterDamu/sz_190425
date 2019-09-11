@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    Promise.resolve(1)
+        .then(2)
+        .then(Promise.resolve(3))
+        .then(console.log)
+</script>
+</html>
