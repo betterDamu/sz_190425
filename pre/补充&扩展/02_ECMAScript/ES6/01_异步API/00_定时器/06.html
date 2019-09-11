@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		for(var i=0;i<5;i++){
+			(function(i){
+				setTimeout(function(){
+					console.log(i);
+				},1000*i)
+			})(i)
+		}
+		
+		
+		//耗时操作
+		for(var j=0;j<10000;j++){
+			console.log("啦啦啦啦啦")
+		}
+	</script>
+</html>

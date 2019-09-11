@@ -187,6 +187,7 @@ var updater = {
         node.innerHTML = typeof value == 'undefined' ? '' : value;
     },
 
+    // oldValue: 在数据单向流中才有意义 避免加到脏的class
     classUpdater: function(node, value, oldValue) {
         var className = node.className;
         className = className.replace(oldValue, '').replace(/\s$/, '');

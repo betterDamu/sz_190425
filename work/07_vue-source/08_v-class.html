@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+       <p v-class="msg" v-on:click="fn" class="xxx">123</p>
+    </div>
+</body>
+<script src="MVVM/mvvm.js"></script>
+<script src="MVVM/observer.js"></script>
+<script src="MVVM/compile.js"></script>
+<script src="MVVM/watcher.js"></script>
+<script>
+    var vm = new MVVM({
+        el:"#app",
+        data:{
+           msg:"red"
+        },
+        methods:{
+            fn:function () {
+                console.log("fn")
+            }
+        }
+    })
+
+    vm.msg="pink"
+</script>
+</html>

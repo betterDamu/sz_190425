@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		for(var i=0;i<5;i++){
+			(function(i){
+				setTimeout(function(){
+					console.log(i);
+				},1000*i)
+			})(i)
+		}
+		
+		
+		for(var i=0;i<10000;i++){
+			console.log("---")
+		}
+	</script>
+</html>
