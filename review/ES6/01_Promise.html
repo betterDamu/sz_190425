@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // Promise本身是一个构造函数  函数的第一个参数是一个同步的回调
+   /*
+    new Promise 后要返回一个Promise  这个Promise的状态是怎么确定的?
+                        执行器的返回值会被忽略
+                        看执行器调用自己的哪一个参数
+                                第一个参数 返回成功状态的Promise
+                                第二个参数 返回失败状态的Promise
+                        或者观察执行器有没有报异常
+                                返回失败状态的Promise
+                        没有经历上述操作
+                                返回 初始化状态的Promise
+     */
+
+    /*Promise的状态机制:
+        当Promise状态切换时 会主动调用对应then方法中的参数
+            初始化 --> 成功  调then的第一个参数
+            初始化 --> 失败  调then的第二个参数
+
+        then方法返回一个Promise 这个Promise怎么确定?
+            then方法返回的promise的状态 跟 then方法参数(回掉函数)的返回值有关
+                返回了一个值 : then方法返回的promise变成成功状态
+                抛出错误 :    then方法返回的promise变成失败状态
+                Promise :   then方法返回的promise状态 和 该promise保持一致
+
+         当promise的状态发生切换时 如果没有对应的回调匹配  那当前这个promise会被一直传递下去 直到匹配到回调
+    */
+
+
+
+        new Promise((reslove,reject)=>{
+            setTimeout(()=>{
+                reslove()
+            },1000)
+        })
+        .then(()=>{
+             return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve()
+                },1000)
+            })
+        })
+        .then(()=>{console.log(2)})
+        .then(()=>{console.log(3)})
+        .catch(()=>{console.log(4)})
+
+
+</script>
+</html>
