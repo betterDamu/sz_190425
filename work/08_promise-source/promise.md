@@ -41,15 +41,13 @@
 
 ### promise的其他API
     Promise
-    Promise.reslove
-    Promise.reject
     Promise.prototype.then
     Promise.prototype.catch
-    Promise.prototype.all
-    Promise.prototype.race
-    Promise.prototype.finally
 
-
+    Promise.reslove
+    Promise.reject
+    Promise.all
+    Promise.race
 ###微任务 宏任务
     微任务:
         promise相关异步回调

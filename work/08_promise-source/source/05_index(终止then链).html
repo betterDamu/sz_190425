@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="lib/05_Promise.js"></script>
+<script>
+
+   /*new Promise((resolve,reject)=>{
+       reject("damu")
+   }).then(()=>{
+
+   }).catch((err)=>{
+       console.log(err)
+       return new Promise(()=>{})
+   }).then((val)=>{
+        console.log("end",val)
+   })*/
+
+   /*new Promise((resolve,reject)=>{
+       reject("damu")
+   }).then(()=>{})
+     .then(()=>{})
+     .then(()=>{}).catch(()=>{
+
+       })*/
+
+   new Promise((resolve,reject)=>{
+       reject("damu")
+   }).then(()=>{},()=>{})
+       .then(()=>{},()=>{})
+
+
+</script>
+</html>
