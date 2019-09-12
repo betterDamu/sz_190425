@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="lib/07_Promise(ES6).js"></script>
+<script>
+    var p1 = new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res(1)
+        },1000)
+    })
+    var p2 = new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res(2)
+        },500)
+    })
+    var p3 = new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res(3)
+        },3000)
+    })
+    console.log(Promise.all([p3,p2,p1]))
+</script>
+</html>

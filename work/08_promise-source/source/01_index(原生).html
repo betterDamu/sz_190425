@@ -8,7 +8,49 @@
 
 </body>
 <script>
-    var p = new Promise((resolve,reject)=>{
+
+    var p1 = new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res(1)
+        },1000)
+    })
+    var p2 = new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res(2)
+        },500)
+    })
+    var p3 = new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res(3)
+        },3000)
+    })
+
+
+    console.log(Promise.all([p2,p1,p3]))
+
+
+
+   /* var p1 = new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res(1)
+        },1000)
+    })
+    var p2 = new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res(2)
+        },500)
+    })
+    var p3 = new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res(3)
+        },3000)
+    })
+
+
+    console.log(Promise.race([p1,p2,p3]))*/
+
+
+   /* var p = new Promise((resolve,reject)=>{
         setTimeout(()=>{
             resolve()
             console.log("----")
@@ -19,6 +61,6 @@
     p.then(()=>{console.log(2)})
     p.then(()=>{console.log(3)})
     p.then(()=>{console.log(4)})
-    p.then(()=>{console.log(5)})
+    p.then(()=>{console.log(5)})*/
 </script>
 </html>
