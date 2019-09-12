@@ -7,4 +7,19 @@
 <body>
 
 </body>
+<script src="lib/03_Promise.js"></script>
+<script>
+    var p = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve()
+                console.log("----")
+            },1000)
+    })
+
+    p.then(()=>{console.log(1)},(err)=>{console.log(err)})
+    p.then(()=>{console.log(2)})
+    p.then(()=>{console.log(3)})
+    p.then(()=>{console.log(4)})
+    p.then(()=>{console.log(5)})
+</script>
 </html>
