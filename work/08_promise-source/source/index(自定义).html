@@ -7,9 +7,9 @@
 <body>
 
 </body>
-<script src="lib/03_Promise.js"></script>
+<script src="lib/04_Promise.js"></script>
 <script>
-    var p = new Promise((resolve,reject)=>{
+   /* var p = new Promise((resolve,reject)=>{
             setTimeout(()=>{
                 resolve()
                 console.log("----")
@@ -20,6 +20,17 @@
     p.then(()=>{console.log(2)})
     p.then(()=>{console.log(3)})
     p.then(()=>{console.log(4)})
-    p.then(()=>{console.log(5)})
+    p.then(()=>{console.log(5)})*/
+
+   new Promise((resolve,reject)=>{
+       resolve("damu")
+   }).then(()=>{
+       return new Promise((resolve,reject)=>{
+           resolve("damu2")
+       })
+   }).then((val)=>{
+       console.log(val)
+   })
+
 </script>
 </html>
