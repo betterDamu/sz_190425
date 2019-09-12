@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*new Promise((resolve,reject)=>{
+        throw new Error("damu")
+    }).then((val)=>{
+        console.log(val)
+    },(err)=>{
+        console.log(err)
+    })*/
+
+
+    new Promise((resolve,reject)=>{
+        resolve(1)
+    }).then(()=>{
+        throw new Error("damu")
+    }).then((val)=>{console.log(val)},(err)=>{console.log(err)})
+
+</script>
+</html>

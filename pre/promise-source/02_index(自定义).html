@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="lib/06_Promise(ES6).js"></script>
+<script>
+    /*
+      Promise构造函数
+            Promise.prototype.then
+            Promise.prototype.catch
+            Promise.resolve()
+            Promise.reject()
+            Promise.race()
+            Promise.all()
+
+       then方法中有两个回调参数
+            对应的promise实例状态确定了 且调用了then方法
+                状态:成功  将第一个回调参数塞入微队列
+                状态:失败  将第二个回调参数塞入这个微队列
+            对应的promise实例状态未确定(pending状态) 且调用了then方法
+                将两个回调都要保存起来 等待该 promise实例状态确定后 将对应的回调塞入微队列
+
+       then方法返回的promise 看then回调函数(微队列中被执行的那个回调函数)的返回值
+            状态:成功       then回调函数返回了一个非promise值 或者 返回了一个成功状态的promise
+            状态:失败       then回调函数报错 或者 返回了一个失败的promise
+            状态:初始化     then回调函数没有调用 或者 返回了一个初始状态的promise
+
+       then方法的一个注意点
+            如果没有为promise实例提供对应状态的回调 那么then方法会将当前这个promise继续传递下去
+
+    */
+
+
+    // 像then的回调怎么去决定then方法的返回值一样
+    var p0 = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve("p0")
+        },1000)
+    })
+
+    var p1 = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve("p1")
+        },1000)
+    })
+
+    var p2 = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve("p2")
+        },1000)
+    })
+
+   /* Promise.all([p0,p1,p2]).then((val)=>{
+        console.log(val)
+    },(err)=>{
+        console.log(err)
+    })*/
+
+    Promise.race([p0,p1,p2]).then((val)=>{
+        console.log(val,"cg")
+    },(err)=>{
+        console.log(err,"sb")
+    })
+
+</script>
+</html>

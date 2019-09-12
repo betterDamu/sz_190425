@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="lib/06_Promise(ES6).js"></script>
+<script>
+    var p = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve("第一次成功")
+        },1000)
+    })
+
+    p.then((val)=>{
+        console.log(val);
+        throw new Error("SB")
+        return "第二次成功"
+    }).catch((err)=>{
+        console.log(err)
+        return new Promise(()=>{})
+    }).then((val)=>{
+        console.log(val)
+    })
+
+
+</script>
+</html>
